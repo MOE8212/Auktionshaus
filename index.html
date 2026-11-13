@@ -36,6 +36,14 @@ a{color:#121212}a:hover{color:#B3261E}
   .hs-links a+a{border-top:1px solid #2C2B28}
 }
 @media (max-width: 389px){.hs-brand img{height:26px}}
+/* Statistik mobil: 2x2 */
+@media (max-width: 700px){
+  .hs-stats{grid-template-columns:1fr 1fr!important;gap:32px 16px!important;margin-top:36px!important}
+  .hs-stats>div{padding-top:14px!important;gap:6px!important}
+  .hs-stats>div>span:nth-child(1){font-size:min(40px,19cqi)!important;letter-spacing:-.04em!important}
+  .hs-stats>div>span:nth-child(2){font-size:14px!important}
+  .hs-stats>div>span:nth-child(3){font-size:13px!important;line-height:1.35}
+}
 /* Hero */
 .hs-hero{position:relative;border-radius:24px;overflow:hidden;background:#0A1E4A;min-height:clamp(560px,56vw,820px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(24px,3vw,40px);box-sizing:border-box;color:#FFFFFF}
 .hs-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
@@ -127,7 +135,7 @@ a{color:#121212}a:hover{color:#B3261E}
       <h2 style="margin: 0; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; font-weight: 600; letter-spacing: -0.035em">Hohenstaufen<br>in Zahlen.</h2>
       <p style="margin: 0; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #5E5A52">( Teils Beispielwerte – vor Livegang prüfen )</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 56px">
+    <div class="hs-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 56px">
       <div style="border-top: 1px solid #121212; padding-top: 20px; display: flex; flex-direction: column; gap: 10px; container-type: inline-size">
         <span style="font-size: min(clamp(56px, 6vw, 96px), 19cqi); font-weight: 600; letter-spacing: -0.05em; line-height: 1; white-space: nowrap">1.000+</span>
         <span style="font-size: 16px; font-weight: 600">Lose pro Auktion</span>
@@ -230,48 +238,49 @@ a{color:#121212}a:hover{color:#B3261E}
         <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Journal</span>
         <h2 style="margin: 0; font-weight: 700; font-size: clamp(52px, 7vw, 112px); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase">Aus dem<br>Auktionshaus</h2>
         <span aria-hidden="true" style="width: 64px; height: 1px; background: #121212; margin: 12px 0"></span>
-        <p style="margin: 0; font-size: clamp(30px, 3.2vw, 44px); color: #B3261E">Berichte, Ergebnisse &amp; Sammlerwissen</p>
+        <p style="margin: 0; font-size: clamp(30px, 3.2vw, 44px); color: #B3261E">Rekorde, Raritäten &amp; Geschichten</p>
       </div>
 
       <article style="margin-top: 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(32px, 5vw, 72px); align-items: center">
-        <img src="bilder/karussell_glossy.jpg" alt="Märklin-Musikkarussell Nr. 1131 von 1903 mit bunten Fahnen und Muschelgondeln vor korallenrotem Hintergrund" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; display: block; border-radius: 20px">
+        <img src="bilder/brunsvik_glossy.jpg" alt="Märklin-Kriegsschiff „Brunsvik“ von 1907 auf glänzend petrolfarbenem Studiohintergrund" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; border-radius: 20px">
         <div style="display: flex; flex-direction: column; gap: 24px; max-width: 560px">
-          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Bericht · Auktion vom 17. Januar 2026</span>
-          <h3 style="margin: 0; font-weight: 700; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; letter-spacing: -0.035em">Einziges bekanntes Exemplar: Märklins Musik-Karussell von 1903 erzielt 150.000 €</h3>
-          <p style="margin: 0; padding-top: 24px; border-top: 2px solid #B3261E; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.45; font-weight: 500; letter-spacing: -0.01em; color: #2B2925">Das Karussell Nr. 1131 mit Spielwerk ist das einzige bisher bekannte Exemplar. Warum Sammler aus aller Welt mitboten – und welche Raritäten die nächste Auktion bringt.</p>
-          <div style="display: flex; align-items: center; gap: 16px">
-            <span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 50%; background: #121212; color: #F4F2EE; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">HG</span>
-            <span style="font-size: 14px; line-height: 1.4; color: #4A463F"><span style="font-weight: 600; color: #121212">Hans Georg Grupp</span><br>Geschäftsführer · 17. Januar 2026</span>
-          </div>
-          <a href="#journal" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #121212; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Bericht lesen →</a>
+          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Weltrekord · Winterauktion Februar 2019</span>
+          <h3 style="margin: 0; font-weight: 700; font-size: clamp(36px, 4vw, 56px); line-height: 1.02; letter-spacing: -0.035em">Das größte Schiff, das Märklin je gebaut hat: 406.000&nbsp;€ für die „Brunsvik“</h3>
+          <p style="margin: 0; padding-top: 24px; border-top: 2px solid #B3261E; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.45; font-weight: 500; letter-spacing: -0.01em; color: #2B2925">1,20 Meter lang, gebaut 1907 – und weltweit nur noch drei Exemplare bekannt. Eines davon schenkte Kaiser Wilhelm II. laut Märklin-Aufzeichnungen dem Kaiser von China. In Göppingen stellte die „Brunsvik“ einen Weltrekord für ein Spielzeugschiff auf.</p>
+          <span style="font-size: 14px; line-height: 1.4; color: #4A463F"><span style="font-weight: 600; color: #121212">Pressemitteilung &amp; SWR&nbsp;4-Reportage</span><br>Februar 2019</span>
+          <a href="http://auktion-hohenstaufen.de/pressemitteilungen.html" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #121212; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Bericht lesen →</a>
         </div>
       </article>
 
       <div style="margin-top: 96px; border-top: 1px solid #121212; padding-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px">
         <article style="display: flex; flex-direction: column; gap: 14px">
-          <img src="bilder/brunsvik_glossy.jpg" alt="Märklin-Kriegsschiff „Brunsvik“ von 1907 auf glänzend petrolfarbenem Studiohintergrund" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; border-radius: 12px">
-          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Rekord</span>
-          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">406.000 € für die „Brunsvik“ – Weltrekord für ein Spielzeugschiff</h4>
-          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">Märklins Kriegsschiff 5130/11D von 1907 schrieb in Göppingen Auktionsgeschichte.</p>
-          <span style="font-size: 13px; color: #5E5A52">Januar 2026</span>
-          <a href="#journal" style="font-size: 14px; font-weight: 600; text-decoration: none">Weiterlesen →</a>
+          <div aria-hidden="true" style="aspect-ratio: 3 / 2; border-radius: 12px; background: #B3261E; color: #FFFFFF; padding: 22px 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #F2C9C5">Zuschlag 2016</span><span style="font-size: clamp(44px, 4.6vw, 68px); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95">440.000&nbsp;€</span></div>
+          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Rekord · Februar 2016</span>
+          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">Märklins Dampfmaschinen­fabrik von 1906 erzielt Rekordpreis</h4>
+          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">Das größte Objekt, das Märklin je gebaut hat – Vorbild war die eigene Fabrik in Göppingen. Aufgerufen mit 145.000&nbsp;€, ging es für 440.000&nbsp;€ an einen Sammler aus den USA. 95&nbsp;% der rund 1.000 Lose wurden verkauft.</p>
+          <span style="font-size: 13px; color: #5E5A52">Stuttgarter Zeitung · Februar 2016</span>
+          <a href="http://auktion-hohenstaufen.de/pressemitteilungen.html" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; text-decoration: none">Zum Pressebeitrag →</a>
         </article>
         <article style="display: flex; flex-direction: column; gap: 14px">
-          <img src="bilder/taxi_glossy.jpg" alt="Märklin-Taxi 5213 von 1904 in Rotbraun auf glänzend grünem Studiohintergrund" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; border-radius: 12px">
-          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Ergebnisse</span>
-          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">Die Höhepunkte der Auktion vom 17. Januar 2026</h4>
-          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">Vom Märklin-Taxi 5213 aus dem Jahr 1904 für 35.000 € bis zur Straßenbahn Spur 0 für 48.000 €: alle Höhepunkte im Überblick.</p>
-          <span style="font-size: 13px; color: #5E5A52">Januar 2026</span>
-          <a href="#journal" style="font-size: 14px; font-weight: 600; text-decoration: none">Weiterlesen →</a>
+          <div aria-hidden="true" style="aspect-ratio: 3 / 2; border-radius: 12px; background: #121212; color: #F4F2EE; padding: 22px 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #8A867D">Beute von 2005</span><span style="font-size: clamp(44px, 4.6vw, 68px); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95">1,7 Mio.&nbsp;€</span></div>
+          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Geschichte · Januar 2015</span>
+          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">Rififi in Göppingen: Die „Augusta Victoria“ kommt unter den Hammer</h4>
+          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">2005 raubten Einbrecher das Märklin-Museum aus. Über Wien und eine Autobahnkontrolle in Italien kam die Beute zurück – darunter der 1,20&nbsp;m lange Schnelldampfer. Zehn Jahre später wurde er bei Hohenstaufen versteigert.</p>
+          <span style="font-size: 13px; color: #5E5A52">Frankfurter Allgemeine Zeitung · 19. Januar 2015</span>
+          <a href="http://auktion-hohenstaufen.de/pressemitteilungen.html" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; text-decoration: none">Zum Pressebeitrag →</a>
         </article>
         <article style="display: flex; flex-direction: column; gap: 14px">
-          <img src="bilder/waerterhaus_glossy.jpg" alt="Märklin-Wärterhaus mit rosa Dach auf glänzend violettem Studiohintergrund" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; border-radius: 12px">
-          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Einliefern</span>
-          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">Märklin-Ware bis 1955 gesucht – so liefern Sie ein</h4>
-          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">Von der ersten Sichtung über die Schätzung bis zur Auszahlung: so begleiten wir Erben.</p>
-          <span style="font-size: 13px; color: #5E5A52">Januar 2026</span>
-          <a href="#journal" style="font-size: 14px; font-weight: 600; text-decoration: none">Weiterlesen →</a>
+          <div aria-hidden="true" style="aspect-ratio: 3 / 2; border-radius: 12px; background: #E7E3DB; color: #121212; padding: 22px 24px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between"><span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #5E5A52">Train Géant, um 1905</span><span style="font-size: clamp(44px, 4.6vw, 68px); font-weight: 700; letter-spacing: -0.045em; line-height: 0.95">80 Jahre verschollen</span></div>
+          <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Rarität · Januar 2018</span>
+          <h4 style="margin: 0; font-weight: 600; font-size: 28px; line-height: 1.12; letter-spacing: -0.02em">Der „Riesenzug“ des Zaren taucht in Göppingen auf</h4>
+          <p style="margin: 0; font-size: 18px; line-height: 1.45; color: #4A463F">Frankreich lieferte den „Train Géant“ an den Zarenhof, in der Revolution verschwand er. Erst in den 1970er-Jahren wurde er auf einem Schrottplatz entdeckt – und kam 2018 in der Winterauktion zum Aufruf.</p>
+          <span style="font-size: 13px; color: #5E5A52">NWZ Göppingen · 19. Januar 2018</span>
+          <a href="http://auktion-hohenstaufen.de/pressemitteilungen.html" target="_blank" rel="noopener" style="font-size: 14px; font-weight: 600; text-decoration: none">Zum Pressebeitrag →</a>
         </article>
+      </div>
+
+      <div style="margin-top: 64px; display: flex; justify-content: center">
+        <a href="http://auktion-hohenstaufen.de/pressemitteilungen.html" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1px solid #CFCAC1; text-decoration: none; font-weight: 600; font-size: 15px">Alle Pressebeiträge →</a>
       </div>
     </div>
   </section>

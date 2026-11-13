@@ -29,6 +29,8 @@ Festgelegt:
 - Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). Für die Website ohne grauen Hintergrund/Kachelmuster neu als `bilder/logo-hell.svg` (#F4F2EE, Navigation + Footer) und `bilder/logo-dunkel.svg` (#121212/#5E5A52, Reserve für helle Flächen). Footer greift das Briefpapier-Motiv auf: roter Balken + Wortmarke + rotes Quadrat (#B3261E). `bilder/loewe.png` wird nicht mehr verwendet.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
+Mobil (≤ 700 px): Statistik als 2×2-Raster mit kleineren Zahlen; Desktop unverändert.
+
 Seitenreihenfolge: Navigation (Logo) → Einleitungszeile → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
 
 ## Inhalte: echt vs. erfunden
@@ -40,13 +42,15 @@ Echt (Quellen: Kunden-Anzeigen in `Pictues/`, alte Website, Presse):
 - Weltrekord: Märklin „Brunsvik“ 5130/11D (1907) 406.000 € (Ergebnisse Feb 2019)
 - ca. 1.040 Lose pro Auktion; ca. 80 % Märklin; Einlieferungen von Märklin-Ware bis ca. 1955 erwünscht
 - Wärterhaus-Bild aus „Resultate Winterauktion 2018“
+- Gründung 2013 durch Roland Gaugele (ehem. Märklin-Museumsleiter) und Hans Georg Grupp (vereidigter Sachverständiger für Blechspielzeug) – laut FAZ 19.01.2015; erste Auktion 25.01.2014
+- Journal-Beiträge basieren auf der Presseseite der alten Website (auktion-hohenstaufen.de/pressemitteilungen.html), eigene Kurzfassungen mit Quellenangabe: Brunsvik/Weltrekord (Feb 2019), Dampfmaschinenfabrik 440.000 € (Stuttgarter Zeitung, Feb 2016), „Augusta Victoria“/Museumsraub (FAZ 19.01.2015), „Train Géant“ (NWZ 19.01.2018). Links führen vorerst auf die alte Presseseite.
 
 **Erfunden / Beispielwerte – vor Livegang mit Kunden klären:**
-- „Seit 2013“, „25+ Auktionen“, „9.500 Besucher pro Jahr“
+- „25+ Auktionen“, „9.500 Besucher pro Jahr“
 - Nächste Auktion „Sa, 23. Januar 2027“, Vorbesichtigung ab 18. Januar, Vorgebote bis 22. Januar
 - „Dampfmaschinen & Zubehör – Online-Nachverkauf, 186 Lose, endet in 4 Tagen“
 - Öffnungszeiten „Mo–Fr 10–17 Uhr“
-- Datum/Autor der Journal-Beiträge, Newsletter-Formular (ohne Funktion)
+- Newsletter-Formular (ohne Funktion)
 - Hinweis „Teils Beispielwerte – vor Livegang prüfen“ über der Statistik bleibt, bis alles geklärt ist.
 
 ## Bilder: Herkunft und Aufbereitung
@@ -59,6 +63,8 @@ Alle Bilder in `bilder/` sind **Montagen/Platzhalter**, kein echtes Studio-Shoot
 
 - `bilder/versteigert/los_XXXX.jpg`: echte Produktfotos der alten Website (`img_XXXX-large.jpg`, 1620×1080 bzw. 900×600), nur zugeschnitten (3:2, 840×560), Weißpunkt angehoben, leicht geschärft – keine KI. Bildunterschriften sind allgemeine Beschreibungen (Hersteller/Zuschlag unbekannt).
 - `bilder/marken/`: Märklin-Logo (Wikimedia „Logo Märklin.svg“) und Bing-Werke-Zeichen 1924 (Wikimedia), schwarz `#121212` eingefärbt.
+
+- Journal: Pressefotos nicht verwendet (Zeitungsfotos mit Fremdrechten oder Kundenfotos in nur 385–510 px). Karten zeigen stattdessen typografische Kacheln mit Kennzahl; Hauptbeitrag nutzt `brunsvik_glossy.jpg`. `karussell_glossy`, `taxi_glossy`, `waerterhaus_glossy` sind derzeit ungenutzt.
 
 Regeln:
 - Das Objekt selbst nie per KI verändern (Bieter müssen das echte Objekt sehen) – nur Hintergrund.
