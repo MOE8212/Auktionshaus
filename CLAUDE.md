@@ -29,7 +29,7 @@ Festgelegt:
 - Logo: Staufer-Löwe des Kunden (aus den Anzeigen freigestellt) als `bilder/loewe.png`, weiß in der Navigation.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
-Seitenreihenfolge: Navigation → Wortmarke → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
+Seitenreihenfolge: Navigation → Wortmarke → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
 
 ## Inhalte: echt vs. erfunden
 
@@ -57,6 +57,9 @@ Alle Bilder in `bilder/` sind **Montagen/Platzhalter**, kein echtes Studio-Shoot
 - Farbe +25 %, Kontrast leicht erhöht, Hochskalierung 1,5–2× (Lanczos + Unschärfemaske) – **keine** KI-Hochskalierung
 - Hintergründe per Code generiert (Verlauf + Spot + Spiegelboden)
 
+- `bilder/versteigert/los_XXXX.jpg`: echte Produktfotos der alten Website (`img_XXXX-large.jpg`, 1620×1080 bzw. 900×600), nur zugeschnitten (3:2, 840×560), Weißpunkt angehoben, leicht geschärft – keine KI. Bildunterschriften sind allgemeine Beschreibungen (Hersteller/Zuschlag unbekannt).
+- `bilder/marken/`: Märklin-Logo (Wikimedia „Logo Märklin.svg“) und Bing-Werke-Zeichen 1924 (Wikimedia), schwarz `#121212` eingefärbt.
+
 Regeln:
 - Das Objekt selbst nie per KI verändern (Bieter müssen das echte Objekt sehen) – nur Hintergrund.
 - Objekte mit NS-Symbolen (z. B. Junkers-Flugzeuge, Zeppelin in den Anzeigen) nicht verwenden.
@@ -67,7 +70,8 @@ Regeln:
 - [ ] Kunden-Feedback zur ersten Version einholen
 - [ ] Beispielwerte (siehe oben) durch echte Zahlen/Termine ersetzen
 - [ ] Bessere Bilder: Einzelfotos von der alten Website oder Studio-Fotos; Karussell 8846, Straßenbahn, Lok noch ungenutzt (Preisschilder liegen auf dem Objekt)
-- [ ] Marken-Laufband: derzeit Markennamen als Text (Märklin, Bing, Carette, Lehmann, Plank, Schoenner, Doll, Bub, Distler, Krauss). Herstellerlogos nur einbauen, wenn der Kunde die Dateien liefert (idealerweise mit Zustimmung der Markeninhaber), dann einheitlich schwarz-weiß.
+- [ ] Marken-Laufband: Märklin und Bing als Logo (schwarz); Carette, Lehmann, Plank, Schoenner, Doll, Bub, Distler, Krauss noch als schwarzer Text – für diese gibt es keine frei verfügbaren Logodateien. Logos vom Kunden besorgen (Nutzung mit Markeninhabern klären, v. a. Märklin), dann als SVG in `bilder/marken/`, schwarz.
+- [ ] „Bereits versteigert“: mit Kunden klären, ob die Objekte der alten Website versteigert wurden; echte Bezeichnungen (Hersteller, Katalognr.) und ggf. Zuschläge eintragen
 - [ ] Unterseiten: Auktionen/Katalog, Einliefern, Ergebnisse, Journal, Kontakt, Impressum, Datenschutz, Versteigerungsbedingungen
 - [ ] Online-Bieten: Anbindung prüfen (Kunde nutzt bereits lot-tissimo / the-saleroom)
 - [ ] Newsletter-Formular anbinden oder entfernen
