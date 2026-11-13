@@ -26,7 +26,7 @@ Festgelegt:
 - **Nur eine Schrift:** Inter Tight (Google Fonts), Gewichte 400–800. Keine zweite Schrift (Michael wollte ausdrücklich eine einheitliche Schrift).
 - Farben: Off-White `#F4F2EE` (Grund), Schwarz `#121212`, Akzentrot `#B3261E` (nah am Rot der Kunden-Anzeigen), Grautöne `#5E5A52` / `#8A867D`.
 - Radius: Karten 24 px, Bilder 12–20 px, Buttons Pille (999 px). Touch-Ziele ≥ 44 px.
-- Logo: Staufer-Löwe des Kunden (aus den Anzeigen freigestellt) als `bilder/loewe.png`, weiß in der Navigation.
+- Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). Für die Website ohne grauen Hintergrund/Kachelmuster neu als `bilder/logo-hell.svg` (#F4F2EE, Navigation + Footer) und `bilder/logo-dunkel.svg` (#121212/#5E5A52, Reserve für helle Flächen). Footer greift das Briefpapier-Motiv auf: roter Balken + Wortmarke + rotes Quadrat (#B3261E). `bilder/loewe.png` wird nicht mehr verwendet.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
 Seitenreihenfolge: Navigation → Wortmarke → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.

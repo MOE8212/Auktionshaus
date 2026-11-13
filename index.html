@@ -13,7 +13,8 @@ body{margin:0;background:#F4F2EE}
 a{color:#121212}a:hover{color:#B3261E}
 /* Navigation */
 .hs-nav{position:relative;display:flex;align-items:center;gap:28px;background:#121212;color:#F4F2EE;border-radius:999px;padding:6px 6px 6px 22px;font-size:14px;box-sizing:border-box}
-.hs-brand{display:inline-flex;align-items:center;gap:10px;color:#F4F2EE;text-decoration:none;font-weight:800;letter-spacing:.1em;font-size:13px;white-space:nowrap}
+.hs-brand{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.hs-brand img{height:30px;width:auto;display:block}
 .hs-brand:hover{color:#F4F2EE}
 .hs-links{display:flex;gap:22px}
 .hs-links a{color:#D9D6CF;text-decoration:none}
@@ -34,7 +35,7 @@ a{color:#121212}a:hover{color:#B3261E}
   .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#F4F2EE}
   .hs-links a+a{border-top:1px solid #2C2B28}
 }
-@media (max-width: 359px){.hs-brand{font-size:0;gap:0}.hs-brand img{height:26px!important}}
+@media (max-width: 389px){.hs-brand img{height:26px}}
 /* Hero */
 .hs-hero{position:relative;border-radius:24px;overflow:hidden;background:#0A1E4A;min-height:clamp(560px,56vw,820px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(24px,3vw,40px);box-sizing:border-box;color:#FFFFFF}
 .hs-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
@@ -64,7 +65,7 @@ a{color:#121212}a:hover{color:#B3261E}
   <!-- Navigation: schwebende Pille (mobil: eine Zeile + Menü) -->
   <div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
     <nav class="hs-nav" aria-label="Hauptnavigation">
-      <a href="#top" class="hs-brand"><img src="bilder/loewe.png" alt="" style="height: 22px; width: auto; display: block">HOHENSTAUFEN</a>
+      <a href="#top" class="hs-brand"><img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" width="137" height="30"></a>
       <div class="hs-links" id="hs-links">
         <a href="#auktionen">Auktionen</a>
         <a href="#verkaufen">Einliefern</a>
@@ -308,7 +309,12 @@ a{color:#121212}a:hover{color:#B3261E}
           <span style="color: #CFCBC2">Mo–Fr 10–17 Uhr</span>
         </div>
       </div>
-      <p aria-hidden="true" style="margin: 0; font-size: clamp(36px, 12vw, 176px); line-height: 0.84; font-weight: 800; letter-spacing: -0.045em; text-transform: uppercase; color: #2C2B28; white-space: nowrap; overflow: hidden">Hohenstaufen</p>
+      <!-- Markenzeichen wie im Briefpapier: roter Balken + Wortmarke + rotes Quadrat -->
+      <div style="--h: clamp(40px, 6vw, 88px); display: flex; align-items: flex-end; gap: clamp(10px, 1.6vw, 22px)">
+        <span aria-hidden="true" style="flex: 1 1 auto; height: calc(var(--h) * 0.431); background: #B3261E"></span>
+        <img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" style="flex: 0 0 auto; height: var(--h); width: auto; display: block">
+        <span aria-hidden="true" style="flex: 0 0 auto; width: calc(var(--h) * 0.39); height: calc(var(--h) * 0.431); background: #B3261E"></span>
+      </div>
       <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; font-size: 13px; color: #ABA79E; border-top: 1px solid #2C2B28; padding-top: 24px">
         <span>© 2026 Auktionshaus Hohenstaufen</span>
         <div style="display: flex; gap: 24px; flex-wrap: wrap">
