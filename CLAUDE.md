@@ -12,6 +12,8 @@ Betreut von Michael Eckert. Ziel aktuell: erste Version mit dem Kunden abstimmen
 ## Aufbau
 
 - `index.html` – Startseite, eine Datei, reines HTML mit Inline-Styles, keine Build-Tools
+- `journal.html` – Journalseite mit allen Presseberichten der alten Website (2013–2019), gleiche Navigation/Footer wie die Startseite (CSS-Block aus `index.html` übernommen – bei Änderungen an Navigation/Footer beide Seiten anpassen)
+- `medien/` – Audio/Video/PDF aus der alten Presseseite (SWR-Beiträge, Zarenzug-PDF)
 - `bilder/` – aufbereitete Bilder (siehe unten)
 - `<meta name="robots" content="noindex">` bleibt drin, solange es ein Entwurf ist
 
@@ -26,7 +28,7 @@ Festgelegt:
 - **Nur eine Schrift:** Inter Tight (Google Fonts), Gewichte 400–800. Keine zweite Schrift (Michael wollte ausdrücklich eine einheitliche Schrift).
 - Farben: Off-White `#F4F2EE` (Grund), Schwarz `#121212`, Akzentrot `#B3261E` (nah am Rot der Kunden-Anzeigen), Grautöne `#5E5A52` / `#8A867D`.
 - Radius: Karten 24 px, Bilder 12–20 px, Buttons Pille (999 px). Touch-Ziele ≥ 44 px.
-- Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). Für die Website ohne grauen Hintergrund/Kachelmuster neu als `bilder/logo-hell.svg` (#F4F2EE, Navigation + Footer) und `bilder/logo-dunkel.svg` (#121212/#5E5A52, Reserve für helle Flächen). Footer greift das Briefpapier-Motiv auf: roter Balken + Wortmarke + rotes Quadrat (#B3261E). `bilder/loewe.png` wird nicht mehr verwendet.
+- Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). **Logofarben bleiben erhalten** (Kundenwunsch): `bilder/logo-farbe.svg` (#181716 / Grau #6E6E6D) in der Navigation, Rot des Logos #C51415. Navigation daher als **weiße Pille**; der rote Balken des Briefkopfs läuft aus der linken Rundung der Pille zum Logo (CSS `.hs-nav-deco`), rechts das rote Quadrat (`.hs-sq`) – Proportionen aus dem Original abgeleitet. Footer (dunkel): `bilder/logo-hell.svg` zweifarbig (#F4F2EE / #B4B2AE) mit rotem Balken + Quadrat. `bilder/logo-dunkel.svg` Reserve, `bilder/loewe.png` ungenutzt.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
 Mobil (≤ 700 px): Statistik als 2×2-Raster mit kleineren Zahlen; Desktop unverändert.
@@ -43,7 +45,7 @@ Echt (Quellen: Kunden-Anzeigen in `Pictues/`, alte Website, Presse):
 - ca. 1.040 Lose pro Auktion; ca. 80 % Märklin; Einlieferungen von Märklin-Ware bis ca. 1955 erwünscht
 - Wärterhaus-Bild aus „Resultate Winterauktion 2018“
 - Gründung 2013 durch Roland Gaugele (ehem. Märklin-Museumsleiter) und Hans Georg Grupp (vereidigter Sachverständiger für Blechspielzeug) – laut FAZ 19.01.2015; erste Auktion 25.01.2014
-- Journal-Beiträge basieren auf der Presseseite der alten Website (auktion-hohenstaufen.de/pressemitteilungen.html), eigene Kurzfassungen mit Quellenangabe: Brunsvik/Weltrekord (Feb 2019), Dampfmaschinenfabrik 440.000 € (Stuttgarter Zeitung, Feb 2016), „Augusta Victoria“/Museumsraub (FAZ 19.01.2015), „Train Géant“ (NWZ 19.01.2018). Links führen vorerst auf die alte Presseseite.
+- Journal: `journal.html` enthält die Texte der alten Presseseite (auktion-hohenstaufen.de/pressemitteilungen.html) **im Volltext** – 17 Beiträge (StZ, FAZ, NWZ, Bild, Pressemitteilungen, Antique Toy World), Bilder in `bilder/presse/`, Medien in `medien/`. Überschriften ohne Titel im Original wurden ergänzt (Sommerauktion 2014, Stuttgarter Hauptbahnhof, „Jede Menge Märklin unterm Hammer“). Das „Resolution“-Foto der StZ ist nicht mehr abrufbar. Startseiten-Kacheln verlinken auf `journal.html#<id>`.
 
 **Erfunden / Beispielwerte – vor Livegang mit Kunden klären:**
 - „25+ Auktionen“, „9.500 Besucher pro Jahr“
@@ -64,7 +66,7 @@ Alle Bilder in `bilder/` sind **Montagen/Platzhalter**, kein echtes Studio-Shoot
 - `bilder/versteigert/los_XXXX.jpg`: echte Produktfotos der alten Website (`img_XXXX-large.jpg`, 1620×1080 bzw. 900×600), nur zugeschnitten (3:2, 840×560), Weißpunkt angehoben, leicht geschärft – keine KI. Bildunterschriften sind allgemeine Beschreibungen (Hersteller/Zuschlag unbekannt).
 - `bilder/marken/`: Märklin-Logo (Wikimedia „Logo Märklin.svg“) und Bing-Werke-Zeichen 1924 (Wikimedia), schwarz `#121212` eingefärbt.
 
-- Journal: Pressefotos nicht verwendet (Zeitungsfotos mit Fremdrechten oder Kundenfotos in nur 385–510 px). Karten zeigen stattdessen typografische Kacheln mit Kennzahl; Hauptbeitrag nutzt `brunsvik_glossy.jpg`. `karussell_glossy`, `taxi_glossy`, `waerterhaus_glossy` sind derzeit ungenutzt.
+- `bilder/presse/`: Fotos von der alten Presseseite (meist 400–1000 px), Kacheln der Startseite als 3:2-Zuschnitt `karte-*.jpg` (780×520). Fotonachweise wie im Original übernommen (u. a. Horst Rudel, Veranstalter, privat, Auktionshaus Hohenstaufen). `karussell_glossy`, `taxi_glossy`, `waerterhaus_glossy` derzeit ungenutzt.
 
 Regeln:
 - Das Objekt selbst nie per KI verändern (Bieter müssen das echte Objekt sehen) – nur Hintergrund.
@@ -80,6 +82,7 @@ Regeln:
 - [ ] „Bereits versteigert“: mit Kunden klären, ob die Objekte der alten Website versteigert wurden; echte Bezeichnungen (Hersteller, Katalognr.) und ggf. Zuschläge eintragen
 - [ ] Unterseiten: Auktionen/Katalog, Einliefern, Ergebnisse, Journal, Kontakt, Impressum, Datenschutz, Versteigerungsbedingungen
 - [ ] Online-Bieten: Anbindung prüfen (Kunde nutzt bereits lot-tissimo / the-saleroom)
+- [ ] Abdruckrechte für die Presse-Volltexte und -Fotos im Journal klären (StZ, FAZ, NWZ, Bild, Fotografen) – auf der alten Seite standen sie schon, beim Relaunch neu bestätigen lassen
 - [ ] Newsletter-Formular anbinden oder entfernen
 - [ ] Vor Livegang: `noindex` entfernen, Impressum/Datenschutz, eigene Domain
 

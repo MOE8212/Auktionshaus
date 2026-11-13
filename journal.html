@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Journal – Auktionshaus Hohenstaufen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#F4F2EE}
+a{color:#121212}a:hover{color:#B3261E}
+/* Navigation: weiße Pille, Logo in Originalfarben, roter Balken wie im Briefkopf */
+.hs-nav{--lh:30px;--padl:54px;--red:#C51415;position:relative;display:flex;align-items:center;gap:28px;background:#FFFFFF;color:#121212;border-radius:999px;padding:6px 6px 6px var(--padl);font-size:14px;box-sizing:border-box;box-shadow:0 1px 2px rgba(18,18,18,.06),0 10px 30px rgba(18,18,18,.10)}
+.hs-nav-deco{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.hs-nav-deco::before{content:"";position:absolute;left:0;width:calc(var(--padl) - var(--lh) * .31);top:calc(50% - var(--lh) / 2 + var(--lh) * .5633);height:calc(var(--lh) * .4307);background:var(--red)}
+.hs-brand{position:relative;display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.hs-logo{display:flex;align-items:flex-end}
+.hs-logo img{height:var(--lh);width:auto;display:block}
+.hs-sq{display:block;width:calc(var(--lh) * .39);height:calc(var(--lh) * .4307);margin-left:calc(var(--lh) * .43);background:var(--red)}
+.hs-links{display:flex;gap:22px}
+.hs-links a{color:#4A463F;text-decoration:none}
+.hs-links a:hover,.hs-links a[aria-current="page"]{color:#121212}
+.hs-links a[aria-current="page"]{font-weight:600}
+.hs-cta{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;background:#B3261E;color:#FFFFFF;border-radius:999px;padding:0 20px;text-decoration:none;font-weight:600;white-space:nowrap}
+.hs-cta:hover{color:#FFFFFF;background:#9A1F18}
+.hs-menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:0;background:#F0EDE7;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto}
+.hs-menu-btn span{display:block;width:16px;height:2px;border-radius:1px;background:#121212;transition:transform .2s}
+.hs-nav.is-open .hs-menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.hs-nav.is-open .hs-menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width: 860px){
+  .hs-nav{--lh:26px;--padl:36px;width:100%;max-width:560px;gap:8px}
+  .hs-brand{margin-right:auto}
+  .hs-cta{padding:0 16px}
+  .hs-menu-btn{display:inline-flex}
+  .hs-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:#FFFFFF;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(18,18,18,.16)}
+  .hs-nav.is-open .hs-links{display:flex}
+  .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#121212}
+  .hs-links a+a{border-top:1px solid #EEEAE3}
+}
+@media (max-width: 389px){.hs-nav{--lh:22px;--padl:28px}.hs-cta{padding:0 12px;font-size:13px}}
+/* Statistik mobil: 2x2 */
+@media (max-width: 700px){
+  .hs-stats{grid-template-columns:1fr 1fr!important;gap:32px 16px!important;margin-top:36px!important}
+  .hs-stats>div{padding-top:14px!important;gap:6px!important}
+  .hs-stats>div>span:nth-child(1){font-size:min(40px,19cqi)!important;letter-spacing:-.04em!important}
+  .hs-stats>div>span:nth-child(2){font-size:14px!important}
+  .hs-stats>div>span:nth-child(3){font-size:13px!important;line-height:1.35}
+}
+/* Hero */
+.hs-hero{position:relative;border-radius:24px;overflow:hidden;background:#0A1E4A;min-height:clamp(560px,56vw,820px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(24px,3vw,40px);box-sizing:border-box;color:#FFFFFF}
+.hs-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.hs-hero-meta{position:relative;display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.hs-hero-h{position:relative;margin:0;font-size:clamp(44px,5.6vw,88px);line-height:.92;font-weight:700;letter-spacing:-.04em}
+@media (max-width: 700px){
+  .hs-hero{min-height:0;padding:0;gap:0;justify-content:flex-start;background:#03081B}
+  .hs-hero-img{position:relative;inset:auto;height:auto;aspect-ratio:4/3;object-position:center 30%}
+  .hs-hero-h{order:2;padding:4px 22px 0;font-size:clamp(40px,12vw,56px)}
+  .hs-hero-meta{order:3;flex-direction:column;padding:20px 22px 24px;font-size:11px;font-weight:500;color:#D6E2F5}
+}
+@keyframes hs-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hs-track{animation:hs-marquee 45s linear infinite}
+@keyframes hs-marquee-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.hs-lots{animation:hs-marquee-rev 90s linear infinite}
+.hs-lots-wrap:hover .hs-lots{animation-play-state:paused}
+.hs-lot{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease;position:relative}
+.hs-lot:hover{transform:scale(1.08);z-index:2;box-shadow:0 20px 44px rgba(18,18,18,.16)}
+@media (prefers-reduced-motion: reduce){.hs-track,.hs-lots{animation:none}.hs-lots-wrap{overflow-x:auto}.hs-lot{transition:none}}
+</style>
+<style>
+.j-wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3vw,40px);box-sizing:border-box}
+.j-back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:600;text-decoration:none}
+.j-toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 48px;margin-top:72px;border-top:1px solid #121212;padding-top:32px}
+.j-year h2{margin:0 0 12px;font-size:14px;letter-spacing:.14em;color:#B3261E;font-weight:600}
+.j-year ul{list-style:none;margin:0;padding:0}
+.j-year li a{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid #E2DED6;text-decoration:none}
+.j-toc-t{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.j-toc-m{font-size:13px;color:#5E5A52}
+.j-list{background:#FFFFFF;margin-top:96px;padding:24px 0 120px}
+.j-art{max-width:720px;margin:0 auto;padding:96px clamp(16px,3vw,40px) 0;box-sizing:content-box;scroll-margin-top:80px}
+.j-art+.j-art{border-top:1px solid #E2DED6;margin-top:96px}
+.j-kicker{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#B3261E}
+.j-title{margin:18px 0 0;font-size:clamp(34px,4.4vw,56px);line-height:1.02;font-weight:700;letter-spacing:-.035em}
+.j-dek{margin:16px 0 0;font-size:22px;line-height:1.3;color:#5E5A52;font-weight:500}
+.j-by{margin:20px 0 0;font-size:14px;color:#4A463F}
+.j-lead{margin:28px 0 0;padding-top:24px;border-top:2px solid #B3261E;font-size:clamp(20px,1.8vw,23px);line-height:1.45;font-weight:500;letter-spacing:-.01em;color:#2B2925}
+.j-art p:not([class]){margin:22px 0 0;font-size:18px;line-height:1.7;color:#2B2925}
+.j-sub{margin:40px 0 0;font-size:22px;font-weight:600;letter-spacing:-.015em}
+.j-fig{margin:40px 0 0}
+.j-fig img{display:block;max-width:100%;height:auto;border-radius:12px;margin:0 auto}
+.j-fig-wide img{width:100%}
+.j-fig figcaption{margin-top:10px;font-size:14px;line-height:1.45;color:#5E5A52}
+.j-media{margin:32px 0 0;padding:18px 20px;background:#F4F2EE;border-radius:16px;display:flex;flex-direction:column;gap:12px;font-size:14px;font-weight:600}
+.j-media audio{width:100%}
+.j-media video{width:100%;border-radius:10px;background:#000}
+.j-pages{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.j-pages img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid #E2DED6}
+.j-link{margin:28px 0 0;font-size:15px;font-weight:600}
+.j-source{margin:40px 0 0!important;font-size:13px!important;color:#8A867D!important}
+.j-top{display:inline-flex;min-height:44px;align-items:center;font-size:14px;font-weight:600;text-decoration:none;margin-top:8px}
+@media (max-width:600px){.j-pages{grid-template-columns:1fr 1fr}.j-art p:not([class]){font-size:17px}}
+</style>
+</head>
+<body>
+<div style="background: #F4F2EE; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
+  <div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
+    <nav class="hs-nav" aria-label="Hauptnavigation">
+      <span class="hs-nav-deco" aria-hidden="true"></span>
+      <a href="index.html" class="hs-brand"><span class="hs-logo"><img src="bilder/logo-farbe.svg" alt="Auktionshaus Hohenstaufen – zur Startseite" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
+      <div class="hs-links" id="hs-links">
+        <a href="index.html#auktionen">Auktionen</a>
+        <a href="index.html#verkaufen">Einliefern</a>
+        <a href="index.html#zahlen">Ergebnisse</a>
+        <a href="journal.html" aria-current="page">Journal</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a href="index.html#bieten" class="hs-cta">Mitbieten</a>
+      <button type="button" class="hs-menu-btn" aria-expanded="false" aria-controls="hs-links" aria-label="Menü öffnen"><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <header class="j-wrap" id="uebersicht" style="padding-top: clamp(40px, 5vw, 64px)">
+    <a class="j-back" href="index.html">← Zur Startseite</a>
+    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 18px">
+      <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Journal</span>
+      <h1 style="margin: 0; font-weight: 700; font-size: clamp(36px, 10vw, max(52px, 7vw)); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase">Aus dem<br>Auktionshaus</h1>
+      <p style="margin: 8px 0 0; font-size: clamp(22px, 2.4vw, 32px); color: #B3261E">Presseberichte, Rekorde &amp; Geschichten 2013–2019</p>
+    </div>
+    <nav class="j-toc" aria-label="Beiträge nach Jahr">
+      <div class="j-year"><h2>2019</h2><ul><li><a href="#brunsvik-2019"><span class="j-toc-t">Im Angebot: Das größte von Märklin jemals erbaute Schiff</span><span class="j-toc-m">Pressemitteilung · Februar 2019</span></a></li></ul></div><div class="j-year"><h2>2018</h2><ul><li><a href="#stz-2018-01-23"><span class="j-toc-t">Seltenes und heiß begehrtes Blechspielzeug</span><span class="j-toc-m">Stuttgarter Zeitung · 23. Januar 2018</span></a></li><li><a href="#nwz-2018-01-19"><span class="j-toc-t">Auktion mit Märklin-Raritäten</span><span class="j-toc-m">NWZ Göppingen · 19. Januar 2018</span></a></li></ul></div><div class="j-year"><h2>2016</h2><ul><li><a href="#rekord-2016"><span class="j-toc-t">Rekord: 440.000 Euro für ein Märklin-Produkt</span><span class="j-toc-m">Pressebericht · Februar 2016</span></a></li><li><a href="#stz-2016-01-21"><span class="j-toc-t">Eine komplette Fabrik unterm Hammer</span><span class="j-toc-m">Stuttgarter Zeitung · 21. Januar 2016</span></a></li><li><a href="#fabrik-2016"><span class="j-toc-t">Glanzpunkt ist eine große Märklin-Fabrik</span><span class="j-toc-m">Pressebericht · Januar 2016</span></a></li></ul></div><div class="j-year"><h2>2015</h2><ul><li><a href="#atw-2015"><span class="j-toc-t">February 2015 Auction Preview</span><span class="j-toc-m">Antique Toy World (USA) · Februar 2015</span></a></li><li><a href="#faz-2015-01-19"><span class="j-toc-t">Rififi in Göppingen</span><span class="j-toc-m">Frankfurter Allgemeine Zeitung · 19. Januar 2015</span></a></li><li><a href="#stz-2015-01-03"><span class="j-toc-t">Märklin-Dampfer unterm Hammer – Odyssee in die Unterwelt</span><span class="j-toc-m">Stuttgarter Zeitung · 3. Januar 2015</span></a></li></ul></div><div class="j-year"><h2>2014</h2><ul><li><a href="#stz-2014-08-23"><span class="j-toc-t">Gebote aus dem In- und Ausland bei der Sommerauktion</span><span class="j-toc-m">Stuttgarter Zeitung · 23. August 2014</span></a></li><li><a href="#nwz-2014-08-23"><span class="j-toc-t">Zweitägige Sommerauktion gut besucht</span><span class="j-toc-m">NWZ Göppingen · 23. August 2014</span></a></li><li><a href="#stz-2014-08-12"><span class="j-toc-t">Der Stuttgarter Hauptbahnhof in Blech</span><span class="j-toc-m">Stuttgarter Zeitung · 12. August 2014</span></a></li><li><a href="#stz-2014-01-28"><span class="j-toc-t">86 000 Euro für erstes Märklin-Schiff</span><span class="j-toc-m">Stuttgarter Zeitung · 28. Januar 2014</span></a></li><li><a href="#nwz-2014-01-27"><span class="j-toc-t">Spielzeug: „Resolution“ geht für 86.000 Euro weg</span><span class="j-toc-m">NWZ Göppingen · 27. Januar 2014</span></a></li></ul></div><div class="j-year"><h2>2013</h2><ul><li><a href="#stz-2013-12-30"><span class="j-toc-t">Jede Menge Märklin unterm Hammer</span><span class="j-toc-m">Stuttgarter Zeitung · 30. Dezember 2013</span></a></li><li><a href="#bild-2013-12-20"><span class="j-toc-t">Märklin-Kutsche unterm Hammer</span><span class="j-toc-m">Bild Stuttgart · 20. Dezember 2013</span></a></li><li><a href="#pm-2013-12-17"><span class="j-toc-t">Eugen Märklins Kutsche von 1895 wird versteigert</span><span class="j-toc-m">Auktionshaus Hohenstaufen · 17. Dezember 2013</span></a></li></ul></div>
+    </nav>
+  </header>
+
+  <main class="j-list">
+<article class="j-art" id="brunsvik-2019">
+<p class="j-kicker">Weltrekord · Pressemitteilung · Februar 2019</p>
+<h2 class="j-title">Im Angebot: Das größte von Märklin jemals erbaute Schiff</h2>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2019-brunsvic-porsche.jpg" alt="Märklin-Schiff „Brunsvic“ neben einem silbernen Porsche 356 im Märklineum" loading="lazy" decoding="async"><figcaption>Die 1,20 Meter lange „Brunsvic“ zusammen mit einem Porsche 356 bei der Vorstellung des Porsche-Museumswagens im Märklineum.</figcaption></figure>
+<div class="j-media"><span>SWR 4 – Radioreportage zur Auktion 2019: „Märklin-Schlachtschiff ist versteigert“</span><audio controls preload="none" src="medien/swr4-2019-maerklin-schlachtschiff-versteigert.mp3"></audio></div>
+<p>Das größte von Märklin jemals gebaute Schiff ist das Highlight der Winterauktion des Auktionshauses Hohenstaufen am 22. und 23. Februar. Die 1,20 Meter lange „Brunsvic“ – hier zusammen mit einem Porsche 356 anlässlich der Vorstellung des Porsche-Museumswagens im Märklineum – stammt aus dem Jahr 1907. „Es sind noch weltweit drei Exemplare bekannt“, berichtet der Inhaber des Auktionshauses Hans Georg Grupp. Ein Exemplar schenkte der deutsche Kaiser Wilhelm II. dem Kaiser von China. Das geht aus Aufzeichnungen von Märklin hervor. Insgesamt kommen 1000 meist hochwertige Objekte zum Aufruf. Neben Autos, Flugzeugen und Karussells sind das auch Märklin-Eisenbahnen und deren Zubehör.</p>
+<p class="j-source">Quelle: Pressemitteilung, Februar 2019</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2018-01-23">
+<p class="j-kicker">Ausstellung · Stuttgarter Zeitung · 23. Januar 2018</p>
+<h2 class="j-title">Seltenes und heiß begehrtes Blechspielzeug</h2>
+<p class="j-dek">Ausstellung vor der Göppinger Märklin-Auktion</p>
+<p class="j-by">Von <strong>Andreas Pflüger</strong></p>
+<p class="j-lead">Die wichtigsten Stücke der Märklin-Winterauktion, die am 2. und am 3. März im Auktionshaus Hohenstaufen am Göppinger Rosenplatz stattfindet werden im Museum des Modellbahnherstellers gezeigt.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2018-museum-kaiser-wilhelm.jpg" alt="Großes Märklin-Schlachtschiff in einer Vitrine des Märklin-Museums, darüber ein Zeppelin-Modell" loading="lazy" decoding="async"><figcaption>Die „Kaiser Wilhelm der Große“ und der Märklin-Zeppelin sind zwei der Schmuckstücke der Auktionsausstellung. Foto: Veranstalter</figcaption></figure>
+<div class="j-media"><span>SWR – Radiobeitrag zur Auktion 2018: „Wertvolle Märklin-Sammlerstücke unter dem Hammer“</span><audio controls preload="none" src="medien/swr-2018-wertvolle-maerklin-sammlerstuecke.mp3"></audio></div>
+<p>Göppingen - Für gewöhnlich sorgen Spielsachen ja dafür, dass Kinderaugen leuchten. Einige besondere Raritäten, wie sie noch bis Ende Februar in mehreren Vitrinen im Göppinger Märklinmuseum an der Ecke Ulmer Straße/Reutlinger Straße zu sehen sind, dürften aber vor allem die Herzen von Sammlern höherschlagen lassen. Was in den Schaukästen gerade ausgestellt wird, kommt am Freitag, 2. März, und am Samstag, 3. März, unter den Hammer, wenn das Auktionshaus Hohenstaufen zu einem weiteren Versteigerungsmarathon in seine Räume am Rosenplatz bittet.</p>
+<p>Die sogenannte Winterauktion, bei der neben einer Vielzahl an Loks und Waggons auch seltenes und wertvolles Blechspielzeug den Besitzer wechseln wird, dürfte abermals ein internationales Publikum anlocken. „Wir rechnen erneut mit einem vollen Haus. Das zeigt sich aus meiner Sicht bereits jetzt an dem großen Interesse an den Stücken, die gerade im Märklinmuseum gezeigt werden“, gibt sich Hans Georg Grupp, der Leiter des Auktionshauses, zuversichtlich.</p>
+<p>Dort ist unter anderem die „Kaiser Wilhelm der Große“ aufgebaut. Bei einer Länge von 1,05 Metern ist sie nicht nur ein großes, sondern auch das früheste von Märklin hergestellte Schlachtschiff: im Jahr 1899 gefertigt, von Hand bemalt und nach dem ersten deutschen Kaiser benannt. Nur wenige solche Exemplare haben nach Grupps Worten die Zeit überdauert. Nicht minder spannend ist für die Experten ein Märklin-Zeppelin von 1904, der in der Ausstellung über der „Kaiser Wilhelm der Große“ schwebt und ebenso wie dieses uhrwerk­betrieben und voll funktionsfähig ist. Was das Schlachtschiff und der Zeppelin sowie einige weitere Exponate im Betriebszustand alles können, ist in der Schau zwar leider nicht zu sehen, dafür aber auf der Homepage des Auktionshauses, wo ein gut zehnminütiger Videoclip eingestellt ist.</p>
+<p>In Bewegung bringen lässt sich auch ein Feuerwehrmagazin von 1900, das als Diorama dargestellt ist. In der Halle, deren Doppelgatter-Türen sich per Druckknopf öffnen lassen, stehen Feuerwehrwagen, die zu jener Zeit noch von einem Pferdegespann gezogen wurden. Ein Hingucker ist zudem ein aus Blech gefertigter Kaufladen namens „Colonialwaaren“, der ebenfalls um 1900 herum von Märklin hergestellt und in Wurzelholz-Furnierung bemalt worden ist. Von dem Objekt, das etliche längst vergessener Waren feilbietet, soll es laut Grupp weltweit nur noch zwei Exemplare geben.</p>
+<p>In jedem Fall ist der Chef des Auktionshauses guter Dinge, dass sich – nicht zuletzt durch die jetzt ausgestellten Schmuckstücke – auch in diesem Jahr wieder ein klasse Gesamtumsatz erzielen lassen wird. Ob dieser an das Rekordergebnis von 1,5 Millionen Euro aus dem Vorjahr heranreiche, stehe jedoch auch für ihn in den Sternen, ergänzt er.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 23. Januar 2018 · Text: Andreas Pflüger</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="nwz-2018-01-19">
+<p class="j-kicker">Raritäten · NWZ Göppingen · 19. Januar 2018</p>
+<h2 class="j-title">Auktion mit Märklin-Raritäten</h2>
+<p class="j-by">Von <strong>Joa Schmid</strong></p>
+<p class="j-lead">In seiner Auktion am 2. und 3. März bietet das Auktionshaus Hohenstaufen viele Märklin-Raritäten an.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2018-beate-grupp-schiff-1902.jpg" alt="Beate Grupp hält ein Märklin-Schiff von 1902 vor einem Regal mit historischen Eisenbahnen" loading="lazy" decoding="async"><figcaption>Da schlagen Sammlerherzen höher: Beate Grupp mit einem Märklin-Schiff aus dem Jahr 1902. Oben auf dem Regal ist der Zarenzug zu sehen, ein Geschenk Frankreichs an den Zarenhof.</figcaption></figure>
+<p>Im Kalender von Sammlern ist dieser Termin dick angestrichen: In seiner kommenden Winterauktion am 2. und 3. März bietet das Auktionshaus Hohenstaufen in Göppingen am Rosenplatz wieder eine hochkarätige Auswahl an altem Blechspielzeug für ein nationales und internationales Publikum an. Die Höhepunkte der Auktion sind bis Ende Februar im Märklin Museum ausgestellt und finden dort bereits reges Interesse.</p>
+<p>Einer der Glanzpunkte der Ausstellung ist, wie der Inhaber und Geschäftsführer des Göppinger Auktionshauses, Hans Georg Grupp, mitteilt, das früheste von Märklin im Jahr 1899 hergestellte Schlachtschiff in wunderschöner Handbemalung ausgestellt. Das 105 Zentimeter lange Schiff wurde nach dem ersten deutschen Kaiser, „Kaiser Wilhelm der Große“, benannt. Nur wenige Exemplare haben die Zeit überlebt und sind noch existent. Über dem Schiff kreist ein Märklin-Zeppelin von 1904. „Beide widerspiegeln ein realistisches Bild der damaligen Zeit und sind uhrwerksbetrieben in voller mechanischer Funktion“, schwärmt Georg Grupp.</p>
+<p>Ein Videoclip auf der Internetseite des Auktionshauses zeigt diese seltenen Objekte in Betrieb. Mehr für das weibliche Publikum ist ein ganz aus Blech gefertigter Kaufladen ausgestellt. Dieser zeigt eine große Anzahl längst vergessener Waren in seinem Sortiment. Das als „Colonialwaren“ deklarierte Objekt wurde um 1900 von Märklin hergestellt und in Wurzelholz Furnierung kunstfertig bemalt. „Weltweit existieren nur zwei Exemplare“, berichtet der Inhaber des Auktionshauses.</p>
+<figure class="j-fig"><img src="bilder/presse/2018-colonialwaaren-laden.jpg" alt="Märklin-Kaufladen „Colonialwaaren“ aus Blech mit Schubladen, Regalen und Warenpackungen" loading="lazy" decoding="async"><figcaption>Auch das ein Schmuckstück für die Auktion: Weltweit existieren nur zwei Exemplare dieses Colonialwaren-Ladens von Märklin.</figcaption></figure>
+<p>In einer dritten Vitrine ist das frühe Feuerwehrmagazin von 1900 als Diorama dargestellt. Die Feuerwehrwagen wurden zu dieser Zeit noch mit einem Pferdegespann bewegt. Die Feuerwehrhalle ist in der seltenen Version mit Doppelgatter-Türen ausgestattet und diese können mit einem am Dach angebrachten Druckknopf gleichzeitig geöffnet werden.</p>
+<p>Bei der Auktion wird ein weiteres Highlight angeboten, das Sammlerherzen höher schlagen lässt. Der lange als verschollen geglaubte „Train Geant“, von Brianne um 1905 in Frankreich hergestellt. Dieser „Riesenzug“ galt als Nationalheiligtum der Franzosen, wurde vom französischen Staat an den Zarenhof nach Russland geliefert und verschwand im russischen revolutionären Umbruch. Er galt 80 Jahre als verschollen und wurde erst in den 1970er Jahren auf einem Schrottplatz gefunden. Er wurde seinerzeit von dem größten Eisenbahnsammler und „Eisenbahnkönig“ L. Bommer in der Schweiz erworben. Der Zug hat eine Spurweite von 140 Millimeter und kostete im Jahre 1905 1250 Franc. Über diesen Zug wurde bereits mehrmals in der SWR Fernsehsendung Eisenbahnromantik berichtet.</p>
+<p>Das Auktionshaus Hohenstaufen am Göppinger Rosenplatz versteigert historisches Blechspielzeug, alte Eisenbahnen und Dampfmaschinen von privaten Einlieferern und hat sich durch ein Weltrekordergebnis der letztjährigen Auktion als international führendes Haus für Spielzeugauktionen etabliert.</p>
+<p class="j-link"><a href="medien/zarenzug.pdf" target="_blank" rel="noopener">Informationen über den Zarenzug (PDF) →</a></p>
+<p class="j-source">Quelle: NWZ Göppingen, 19. Januar 2018 · Text: Joa Schmid</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="rekord-2016">
+<p class="j-kicker">Rekord · Pressebericht · Februar 2016</p>
+<h2 class="j-title">Rekord: 440.000 Euro für ein Märklin-Produkt</h2>
+<p class="j-lead">Sensationelle Ergebnisse bei der Winterauktion des Auktionshauses Hohenstaufen: Eine Märklin-Dampfmaschinenfabrik wurde für 440.000 Euro ersteigert. 95 Prozent der gut 1000 Objekte gingen weg.</p>
+<div class="j-media j-video"><span>SWR Landesschau vom 6. Februar 2016</span><video controls preload="metadata" playsinline src="medien/swr-landesschau-2016-02-06.mp4"></video></div>
+<p>„Diese Auktion hat Geschichte geschrieben“, strahlt Hans Georg Grupp, Geschäftsführer des Auktionshauses Hohenstaufen. Super-Ergebnisse und eine Versteigerungsquote von nahezu 100 Prozent bescherten ihm einen „Überschwang der Gefühle“. Von Auktionator Markus Rockmann, seines Zeichens öffentlich bestellter und vereidigter Auktionator und Versteigerungsprofi, hörte er, dass er so etwas noch nicht erlebt habe. Die Teilnehmer, auch auktionserfahren, seien ganz aufgeregt gewesen über die Ergebnisse, die hier ein ums andere Mal erzielt wurden.</p>
+<p>Es wurde ein wahrer Bieteransturm. Der Saal des Auktionshauses am Rosenplatz war „gerammelt voll“, sagt Grupp, über 100 wollten dabeisein, und gesteigert wurde auf allen Kanälen. Die schriftlichen Vorgebote waren seit der Vorweihnachtszeit noch von 1200 auf über 2000 angewachsen. „Das sind für jedes Objekt zwei“, verdeutlich Grupp. Insgesamt 200 Telefonbieter kamen hinzu. Da liefen die Drähte heiß. Bis zu sechs, sieben Telefonbieter waren an einem Objekt dran.</p>
+<p>Grupp kann nur in Superlativen sprechen: „Das sehr gute Ergebnis vom letzten Jahr wurde noch bei weitem übertroffen.“ Die Schlaglichter: Mit über 60 Prozent Abverkauf wäre das Auktionshaus schon wirklich zufrieden – diesmal waren es 95 Prozent. Der Allzeitrekord: Für 440.000 Euro ging das Modell einer Dampfmaschinenfabrik weg, das in Göppingen anno 1906 gefertigt worden ist – „der höchste jemals für ein Märklin-Produkt erzielte Preis“, schwärmt Grupp. Das passt zu diesem besonderen Stück. „Es ist das größte Objekt, das Märklin je hergestellt hat.“ Pate dafür standen seinerzeit der Dampf- und Werkmaschinenraum der Märklin-Fabrik. Das Modell kostete damals 240 Goldmark. Für den jetzigen Liebhaberwert bekäme man ein Haus.</p>
+<p>Mit 145.000 Euro ging die „Halle“ ins Rennen und erzielte das Dreifache. Das war’s für den Bieter noch nicht. Zu den 440.000 Euro kommt das Aufgeld von 20 Prozent für das Auktionshaus. Das gute Stück wandert nun über den großen Teich. Ein Mann aus den USA, das kann Grupp mitteilen, ist der neue Besitzer. Was nicht ungewöhnlich ist. Es gab Interessenten von Amerika bis Asien. Die Ergebnisse der Auktion hätten auch schon die New York Times erreicht, hat Grupp gehört.</p>
+<p>Für Grupp die größte Überraschung: Eine Berglandschaft aus dem Hause Märklin von 1895 erzielte gar das Zehnfache des Katalogpreises. Für 22.000 Euro wurde sie aufgerufen, am Ende standen 215.000 Euro zu Buche.</p>
+<p>110.000 Euro brachte ein handbemaltes Modell von 1907/08, das dem Zarenbahnhof von St. Petersburg nachempfunden ist. Der Schoner „Jolanda“ erzielte 44.000 Euro, ein Ozeanliner von 1906 landete in ähnlicher Höhe. Vier Schiffe, ein U-Boot, Flugzeuge, zwei Zeppeline und dampfbetriebene Autos gingen ebenso weg wie Herde, Dampfmaschinen, Militärspielzeug, Autobaukästen und Metallkästen. Auch alte Kataloge sind Liebhaber-Stücke. Einer wurde für 2500 Euro ersteigert.</p>
+<p>Zu 80 Prozent war es Märklin-Spielzeug, das das Auktionshaus Hohenstaufen einmal mehr für die Sammlerwelt anbot. „Wir sind fokussiert auf Uraltsachen“, sagt Grupp. Die wertvollsten Stücke stammten alle aus der Zeit vor dem Ersten Weltkrieg.</p>
+<p class="j-source">Quelle: Pressebericht, Februar 2016</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2016-01-21">
+<p class="j-kicker">Vorschau · Stuttgarter Zeitung · 21. Januar 2016</p>
+<h2 class="j-title">Eine komplette Fabrik unterm Hammer</h2>
+<p class="j-by">Von <strong>Eberhard Wein</strong></p>
+<p class="j-lead">Das angeblich größte Blechmodell, das der Göppinger Spielzeughersteller Märklin jemals auf den Markt gebracht hat, kommt Anfang Februar im Auktionshaus Hohenstaufen unter den Hammer. Noch ist es in der Erlebniswelt zu sehen.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2016-dampfmaschinenfabrik.jpg" alt="Märklin-Dampfmaschinenfabrik aus Blech mit Werkstatt und Dampfmaschinenraum" loading="lazy" decoding="async"><figcaption>Alles voll funktionstüchtig: rechts die Dampfmaschine mit Turbine, links die Werkstatt. Foto: Horst Rudel</figcaption></figure>
+<p>Göppingen - Es ist mehr als einen Meter breit, rund 70 Zentimeter hoch und es steckt alles drin, was vor 100 Jahren Stand der Technik war: Bei der nächsten Versteigerung im Auktionshaus Hohenstaufen kommt wieder ein besonderes Stück aus der Werkstatt der Firma Märklin unter den Hammer. Es handelt sich um die mehr als 100 Jahre alte Nachbildung einer Fabrik, wobei sich Märklin der Einfachheit halber das eigene Haus zum Vorbild nahm. „Es ist das größte Blechmodell, das Märklin jemals gebaut hat“, sagt der Auktionator Hans Georg Grupp.</p>
+<h3 class="j-sub">Sechsstellige Summe dürfte es werden</h3>
+<p>Für 240 Goldmark, so lässt es sich in einem Märklin-Katalog aus dem Jahre 1905 nachlesen, wurde das gute Stück angeboten. „Das war ein stolzer Preis, für den man damals auch ein Grundstück bekommen hätte“, sagt Grupp, der die Zielgruppe unter Fabrikanten vermutet, die es als Demonstrationsmodell zum Beispiel in ihrer Lobby ausstellen konnten. Tatsächlich dürften allenfalls einige Sonderanfertigungen ausgeliefert worden sein. Ein weiteres, heute noch existierendes Modell sei ihm auch nach aufwendiger Recherche nicht bekannt geworden, sagt Grupp, der durchaus erwartet, dass das Modell 100 Jahre später nicht billiger geworden ist. Wer die Fabrik haben wolle, müsse wohl eine sechsstellige Summe bieten.</p>
+<p>Ein privater Sammler habe die Fabrik jetzt zur Versteigerung angeliefert, bis Anfang Februar sei sie noch in der Märklin-Erlebniswelt ausgestellt. Alles sei noch voll funktionstüchtig, sagt Grupp. Im Turbinenraum steht eine Dampfmaschine mit einem zwei Liter fassenden Dampfkessel, der mit Spiritus beheizt wird. Im Nebenraum sind die Miniaturausgaben einer Drehmaschine, einer Fräse und einer Stanze aufgestellt, die über einen mechanischen Seilzug, rotierende Wellen und Transmissionsriemen angetrieben werden. Sogar ein kleiner Blasebalg wird auf diese Weise bewegt.</p>
+<p>Spielte der Zar auch mit Märklin?</p>
+<p>Alternativ kann statt der Dampfmaschine auch ein Elektromotor zugeschaltet werden. Auch dieser Antrieb über das Lichtnetz, wie es damals hieß, war in Fabriken um die Jahrhundertwende gebräuchlich. Am Blechmodell will Grupp es allerdings nicht einschalten. „Das ist nicht ganz ungefährlich.“</p>
+<p>Die Fabrik ist nicht der einzige Superlativ bei der Auktion am 5. und 6. Februar. Auch der größte Märklin-Bahnhof, eine ebenfalls mehr als 100 Jahre alte Nachbildung der Bahnstation in Sankt Petersburg in Spurweite 2 kommt zum Aufruf. Märklin unterhielt damals eine Dependance in der damaligen russischen Hauptstadt. Auch der Zar gehörte zu den Kunden. Sicher ist, das der Bahnhof in den 60er Jahren an den bekannten Sammler Graf Giasanti Coluzzi ging. Er ließt seine Sammlung kurz vor seinem Tod bei Christie’s zu Geld machen. Die Aufkleber des Londoner Auktionshaus sind noch zu sehen. Auch das dürfte manchem Sammler gefallen.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 21. Januar 2016 · Text: Eberhard Wein</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="fabrik-2016">
+<p class="j-kicker">Vorschau · Pressebericht · Januar 2016</p>
+<h2 class="j-title">Glanzpunkt ist eine große Märklin-Fabrik</h2>
+<p class="j-lead">Hans Georg Grupp möchte bei der kommenden Winterauktion vom 5. bis 6. Februar hochwertiges Blechspielzeug versteigern.
+900 Exponate, unter anderem von der Firma Märklin, stehen dann für Sammler bereit.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2016-bergbau-modell.jpg" alt="Beate Grupp betrachtet ein großes Bergbau-Modell mit Burg und Felsen" loading="lazy" decoding="async"><figcaption>Der Blick von Beate Grupp richtet sich auf ein wertvolles Bergbau-Modell aus dem 19. Jahrhundert. Es stammt aus einem Familienbesitz. Foto: Hans Georg Grupp</figcaption></figure>
+<p>Fotoausrüstung, Fotobeleuchtung und ein weißer Behang sind in den hinteren Räumen des Auktionshauses Hohenstaufen in Göppingen am Rosenplatz aufgebaut. Ein Güterschuppen steht auf dem weißen Tuch. Das handgefertigte Modell der Firma Märklin stammt noch aus der Zeit vor dem Ersten Weltkrieg. Ursprünglich als Spielzeug gefertigt, wird es nun für den Katalog der Winterauktion von 5. bis 6. Februar fotografiert. Viel Arbeit für Hans Georg Grupp und seine Mitarbeiter. Annährend 900 Einzelobjekte, das meiste ist Blechspielzeug, werden am Auktionstag aufgerufen. Zehn Wochen veranschlagt der Auktionator für die Vorbereitungen.</p>
+<p>Unter den Objekten befinden sich weitere besondere Stücke wie die Märklin Dampfmaschinenfabrik aus dem Jahre 1906: "Es ist das größte Objekt, dass Märklin je hergestellt hat", berichtet Grupp. Die Maße betragen 124,5 auf 86,4 auf 68,6 Zentimeter. Dampf- und Werkmaschinenraum entsprächen der damaligen Fabrik Märklin in Göppingen. Für Sammler der Glanzpunkt auf der Auktion. Dafür spricht schon der damalige Preis von rund 240 Goldmark.</p>
+<p>Ein weiteres Highlight ist der Märklin-Ozeanliner von 1906. Das damals 100 Goldmark teure Schiff konnte sich mit einer im Inneren verbauten Dampfmaschine vorwärts bewegen. Vor dem ersten Weltkrieg hätten sich Spielzeuge mit dieser Qualität nur die gehobene Mittelschicht und die Oberschicht leisten können, erzählt Grupp. Die Spielzeughersteller aus Deutschland seien damals weltweit führend gewesen. Besonders die Handarbeit und von Künstlern geschaffene Bemalung hätten seinesgleichen gesucht.</p>
+<p>Für Grupp ein Grund, warum heute noch Sammler aus der ganzen Welt zu ihm nach Göppingen kommen. Große Nachfrage komme besonders aus den USA. Deshalb werbe er auch dort in Zeitungen für die Auktion in der Kreisstadt. Im Februar erwartet der Auktionator dann großen Andrang. Bereits 1200 schriftliche Vorgebote seien eingegangen. 80 bis 100 Bieter werden vor Ort versuchen auf eines der seltenen Stücke zu bieten. Weitere Telefonbieter kommen hinzu. Trotz der großen Nachfrage rät Grupp seinen Kunden in naher Zukunft zu verkaufen. Denn trotz der Beliebtheit der Exponate, die Anzahl der Sammler sinkt, der Bedarf werde geringer.</p>
+<p>Schließlich zeigt Grupp noch Bilder eines besonderen Bahnhofs. Er ist in Anlehnung an den Zarenbahnhof in St. Petersburg gefertigt worden. Das handbemalte Modell befindet sich derzeit noch im Göppinger Märklin-Museum. Davor steht ein handgefertigter Kaiserzug mit Wappen. Das Spur-2-Modell wird aber separat versteigert. Bahnhof mit Kaiserzug, Ozeanliner und die Märklin-Fabrik können zurzeit noch im Museum betrachtet werden, bevor sie im Februar in private Hände gehen.</p>
+<p class="j-source">Quelle: Pressebericht, Januar 2016</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="atw-2015">
+<p class="j-kicker">International · Antique Toy World (USA) · Februar 2015</p>
+<h2 class="j-title">February 2015 Auction Preview</h2>
+<p>Vorschau auf die Winterauktion 2015 für Sammler in den USA – mit der „Augusta Victoria“, einer Märklin-Einschienenbahn, dem Brauerei-Zug für den amerikanischen Markt und weiteren Raritäten.</p>
+<div class="j-pages"><a href="bilder/presse/2015-atw-usa-seite-1.jpg" target="_blank" rel="noopener"><img src="bilder/presse/2015-atw-usa-seite-1.jpg" alt="Seite 1 der Auction Preview" loading="lazy"></a><a href="bilder/presse/2015-atw-usa-seite-2.jpg" target="_blank" rel="noopener"><img src="bilder/presse/2015-atw-usa-seite-2.jpg" alt="Seite 2 der Auction Preview" loading="lazy"></a><a href="bilder/presse/2015-atw-usa-seite-3.jpg" target="_blank" rel="noopener"><img src="bilder/presse/2015-atw-usa-seite-3.jpg" alt="Seite 3 der Auction Preview" loading="lazy"></a></div>
+<p class="j-source">Quelle: Antique Toy World (USA), Februar 2015</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="faz-2015-01-19">
+<p class="j-kicker">Geschichte · Frankfurter Allgemeine Zeitung · 19. Januar 2015</p>
+<h2 class="j-title">Rififi in Göppingen</h2>
+<p class="j-by">Von <strong>Peter Thomas</strong></p>
+<p class="j-lead">Vor zehn Jahren wurde das Märklin-Museum ausgeraubt. Die Beute wurde wiederbeschafft. Eines der Stücke wird nun versteigert.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2015-augusta-victoria-faz.jpg" alt="Zwei Männer mit weißen Handschuhen halten das große Märklin-Schiff „Augusta Victoria“" loading="lazy" decoding="async"><figcaption>Die „Augusta Victoria“ – 1,20 Meter langer Märklin-Schnelldampfer, 2005 beim Raub im Märklin-Museum entwendet und wiederbeschafft.</figcaption></figure>
+<p>GÖPPINGEN, 18. Januar. Sie kamen mitten in der Nacht und raubten Märklin die Seele der Markengeschichte. Vor zehn Jahren drangen in der Nacht auf den 18. Januar 2005 drei Einbrecher in das Museum des Spielzeugherstellers ein, öffneten brutal die Vitrinen und verschwanden mit den teuersten Stücken der Göppinger Sammlung. Schnell stellte sich heraus, dass der Raub minutiös geplant und vorbereitet worden war. Den Alarmgeber an der Fluchttür hatten die Einbrecher am Tag vorher zerstört, die Sirene auf dem Flachdach füllten sie mit Bauschaum aus. Weniger professionell gingen die Gangster beim Abtransport der Beute vor.</p>
+<p>Roland Gaugele, damals Museumsleiter und Pressesprecher bei Märklin, ist noch heute sichtlich erschüttert, wenn er die Szenerie beschreibt, die sich ihm am nächsten Morgen bot: Zwischen den Splittern des Vitrinenglases lagen noch Fragmente der wertvollen Exponate – das ließ nichts Gutes für deren Zustand erahnen. Die Liste der gestohlenen Preziosen war lang. Das 1891 gebaute „Storchenbein“, die älteste Modell- Lokomotive der Märklin-Geschichte, war ebenso darunter wie Schiffsmodelle, Dampfmaschinen und Modellbahnfahrzeuge in verschiedenen Spurweiten.</p>
+<p>Auch das „Krokodil“ in Spur 0 war verschwunden – die Miniatur der Schweizer Gotthard- Lok (Baureihe Ce 6/8II der SBB) gilt als Märklins Wappentier. Insgesamt fehlten rund 200 Stücke. Gesamtwert: 1,7Millionen Euro. Es begann eine intensive Fahndung nach den Einbrechern, auch die internationale Gemeinde der Märklin-Sammler trug mit vermeintlich heißen Tipps dazu bei. „Ich habe jeden Tag bis zu eine Stunde damit verbracht, diese Hinweise zu falsifizieren, die bis aus Australien kamen“, erinnert sich Gaugele an die Tage nach dem Raub. Der entscheidende Hinweis kam dann Wochen später aus Wien.</p>
+<p>In der österreichischen Hauptstadt waren Beamte von Interpol auf einen Hehler aufmerksam geworden, der eine große Sammlung historischen Spielzeugs auf den Markt bringen wollte. Aber waren es die gesuchten Exponate aus dem Göppinger Museum? Im Lauf der Ermittlungen würde die Polizei einen Experten brauchen, der die historischen Spielzeuge einwandfrei identifizieren konnte und der sich zudem als Lockvogel zur Verfügung stellen würde. Gaugele sagte zu.</p>
+<p>Was dann passierte, erinnert an den Plot eines Thrillers: stundenlanges Warten am Wiener Südbahnhof, endlich ein Anruf auf dem Telefon des verdeckten Vermittlers, der Kunde solle zu einer Limousine kommen, die an der nächsten Kreuzung warte. Jetzt war Märklin-Mann Gaugele auf sich gestellt. Er ging zu dem schwarzen Wagen, stieg ein. Drinnen schob ihm ein untersetzter Mann in Lederjacke einen Schuhkarton zu und fragte knapp: „Was ist das wert?“ Für den Göppinger war auf den ersten Blick klar, dass die Sammelstücke in der Pappkiste aus dem Museum stammten. „Von diesem Moment an lief die Fahndung mit mehr als 100 Beamten auf Hochtouren.“</p>
+<p>Es folgte eine aufwendige Ermittlung mit Observierungen und fingierten Übergaben. Gaugele stand in Göppingen stets auf Abruf, um die Polizei-Aktion mit seiner Expertise zu unterstützen. Schließlich schnappte die Falle zu, der Wiener Kripo gingen die Hehler und einer der Einbrecher ins Netz. Auch rund 80 Prozent der gestohlenen Stücke wurden sichergestellt. Noch aber fehlten die beiden weiteren Räuber und eine Reihe besonderswertvoller Exponate. Da kamen zwei Tage später der Zufall und die Aufmerksamkeit einer italienischen Polizeistreife den Ermittlern aus Österreich und Deutschland zu Hilfe.</p>
+<p>Die Carabinieri stoppten auf der Autobahn in Richtung Slowenien einen verdächtigen Wagen, in dem sie Mitglieder einer Schleuserbande vermuteten. Stattdessen tauchten im Kofferraum die fehlenden Märklin-Objekte auf.</p>
+<p>Auch die beiden großen Blechschiffe wurden in Italien sichergestellt, darunter die „Augusta Victoria“ – damals als Leihgabe eines privaten Sammlers bei Märklin gezeigt und eines der wertvollsten Stücke des Raubes.Während die Exponate in Firmenbesitz nach der Wiederbeschaffung ins Museum zurückkehrten (und teilweise noch heute die Spuren der rauhen Behandlung durch die Diebe zeigen), stellte der Sammler sein rares Blechschiff nicht mehr in Göppingen aus. Zehn Jahre nach dem Raub hält Gaugele den Dampfer nun doch wieder in Händen – diesmal jedoch als Auktionator, nicht als Museumsleiter.</p>
+<p>Denn nach der Insolvenz Märklins im Februar 2009 (kurz vor dem 150-Jahr-Jubiläum des Unternehmens) verlor Gaugele nach 30 Jahren seine Stelle. Zunächst wandte der ehemalige Museumsleiter sein Wissen über historisches Spielzeug als Kurator von Ausstellungen und als Gutachter an. 2013 gründete er schließlich gemeinsam mit Hans- Georg Grupp, einem vereidigten Sachverständigen für Blechspielzeug, das Auktionshaus Hohenstaufen in Göppingen. Bei der nächsten Auktion des Hauses am Göppinger Rosenplatz kommt nun am 21. Februar die 1,20 Meter lange Miniatur der „Augusta Victoria“ zur Versteigerung.</p>
+<p>Das Modell wurde von Märklin als schwimmfähiges Antriebsmodell mit Elektromotor gebaut, zudem ließe sich eine Dampfmaschine nachrüsten. Benannt ist das Spielzeugschiff nach einem Schnelldampfer, der 1889 bei der Hamburg-Amerikanischen Packetfahrt-Actien-Gesellschaft (Hapag) in Dienst gestellt wurde. Eigentlich sollte das Schiff den Namen der deutschen Kaiserin Auguste Victoria tragen. Vor dem Stapellauf hatte sich jedoch ein (im Original erst 1896 korrigierter) Schreibfehler eingeschlichen, den Märklin damals in aller Detailtreue übernahm. Der Schätzpreis für das Schiffsmodell liegt bei mehr als 100 000 Euro.</p>
+<p class="j-source">Quelle: Frankfurter Allgemeine Zeitung, 19. Januar 2015 · Text: Peter Thomas</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2015-01-03">
+<p class="j-kicker">Geschichte · Stuttgarter Zeitung · 3. Januar 2015</p>
+<h2 class="j-title">Märklin-Dampfer unterm Hammer – Odyssee in die Unterwelt</h2>
+<p class="j-lead">Wer im Februar in Göppingen die Augusta Victoria ersteigert, ersteht nicht nur ein wertvolles Märklin-Schiff, sondern auch ein Stück Kriminalgeschichte mit Interpol, Aktzenzeichen und einem Märklin-Sprecher als Lockvogel in der Unterwelt.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2015-augusta-victoria.jpg" alt="Märklin-Schnelldampfer „Augusta Victoria“ mit vier Schornsteinen" loading="lazy" decoding="async"><figcaption>Das gute Stück ist bei dem Raub unversehrt geblieben. Foto: privat</figcaption></figure>
+<p>Göppingen - Zehn Jahre nach dem spektakulären Millionenraub im Märklin-Museum kommt eines der bedeutendsten, damals entwendeten Exponate im Göppinger Auktionshaus Hohenstaufen unter den Hammer. Es handelt sich um das mehr als 100 Jahre alte Modell des Ozeanriesen „Augusta Victoria“. Es konnte zwar später durch einen Zufall von der italienischen Polizei sicher gestellt werden. In Göppingen wurde es aber nie mehr gezeigt. „Der Leihgeber hatte das Vertrauen in uns verloren“, sagt Roland Gaugele, der damals Märklin-Sprecher war. Heute ist er Mitgeschäftsführer des Auktionshauses und freut sich über die Begegnung mit der alten Bekannten. Für solche Stücke seien schon sechsstellige Summen gezahlt worden.</p>
+<p>Für Märklin war der mit brachialer Gewalt ausgeführte Einbruch in der Nacht zum 18. Januar 2005 ein schwerer Schlag. 176 Modelleisenbahnen, Dampfmaschinen, Autos und Schiffe räumten die Räuber aus den Vitrinen. So entwendeten sie das legendäre Storchenbein, die älteste Modellbahnlokomotive der Welt. Auf 1,7 Millionen Euro schätzte ein Experte den Gesamtwert der Beute.</p>
+<h3 class="j-sub">Kritik an mangelhafter Sicherheit</h3>
+<p>Doch das war es nicht allein. „Uns hat man einen Teil unserer Geschichte gestohlen“, stellte der damalige Geschäftsführer Paul Adams fest. Ohnehin warern es schlechte Zeiten für das Traditionsunternehmen. Kurz zuvor hatte Märklin bekannt gegeben, dass man sich aus wirtschaftlichen Gründen von einem Drittel der rund 1000 Beschäftigten trennen müsse. Nun kam noch der Vorwurf hinzu, die eigene Firmengeschichte nur unzureichend gesichert zu haben. Durch ein allzu laxes Sicherheitssystem habe man die Räuber begünstigt, stellte später ein Richter fest. Allzu sehr hatte man darauf vertraut, dass die Exponate ohnehin unverkäuflich seien. Ein Sammler wolle seine wertvollsten Exponate doch zeigen und nicht im Keller verstecken, sagte Gaugele damals.</p>
+<p>Die Prominenz der geraubten Stücke erwies sich dann tatsächlich als Problem für die Langfinger. Vergeblich boten sie die heiße Ware zunächst in Deutschland an. Dann konzentrierten sich ihre Bemühungen auf Wien. Doch die Polizei hatte ihre Fühler ebenfalls dorthin ausgestreckt. Ein Kommissar hatte kurz vor dem Einbruch das Museum besucht. Dabei war ihm ein Auto mit Wiener Kennzeichen aufgefallen. Zwar hatte dies, wie sich später herausstellte, nichts mit dem Einbruch zu tun. Doch die Wiener Gendamerie war sensibilisiert. Zudem hatte die Göppinger Kripo Interpol eingeschaltet, und auch „Aktenzeichen XY. . . ungelöst“ berichtete.</p>
+<h3 class="j-sub">Der Märklin-Mann als Lockvogel</h3>
+<p>Und so kam es, dass der Pressesprecher Gaugele zum polizeilichen V-Mann avancierte. „Die Polizei brauchte jemanden, der sich mit Modellbahnen auskennt.“ Mehrfach wurde er nach Wien gerufen, um sich als finanzstarker Sammler mit mutmaßlichen Hehlern zu treffen. „Ich wurde über Handy zu verschiedenen Treffpunkten gesteuert.“ Drei Stunden lang musste Gaugele am Wiener Südbahnhof warten, ehe schließlich eine schwarze Limousine vorfuhr. „Mir wurden mehrere Modelle gezeigt, deren Echtheit ich bestätigte.“ In der Folge kam es zu mehreren Übergaben und schließlich zum Zugriff der Polizei, die einen Großteil der Beute beschlagnahmte.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 3. Januar 2015</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2014-08-23">
+<p class="j-kicker">Ergebnisse · Stuttgarter Zeitung · 23. August 2014</p>
+<h2 class="j-title">Gebote aus dem In- und Ausland bei der Sommerauktion</h2>
+<p class="j-lead">Die Gebote zahlreicher Interessenten aus dem In- und Ausland haben am vergangenen Wochenende bei einer Auktion des Göppinger Auktionshauses Hohenstaufen für zufriedene Gesichter bei den beiden Verantwortlichen, Hans Georg Grupp und Roland Gaugele, sowie bei einem Großteil der Verkäufer gesorgt. Mehr als 1000 Objekte, überwiegend Erzeugnisse aus früherer Märklin-Produktion, waren zum Aufruf gekommen und wechselten zu Preisen zwischen fünf und 45 000 Euro den Besitzer. Viele Käufer hatten, nach der Lektüre des aufwendig gestalteten Auktionskatalogs, schriftliche Vorgebote abgegeben.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2014-dampfmaschine-e-werk.jpg" alt="Zwei Männer begutachten eine große Märklin-Dampfmaschine mit Elektrizitätswerk" loading="lazy" decoding="async"><figcaption>Für 45.000 Euro versteigert: Märklin-Dampfmaschine mit E-Werk. Foto: Auktionshaus Hohenstaufen</figcaption></figure>
+<p>Zudem wurde auch telefonisch so eifrig mitgesteigert, dass zeitweise alle Apparate mit Fernbietern besetzt waren. Das Highlight der Versteigerung, eine Dampfmaschinenanlage mit Elektrizitätswerk von Märklin aus dem Jahr 1904, ging zum Aufrufpreis von 45 000 Euro an einen schriftlichen Vorbieter. 2750 Euro erbrachte der Stuttgarter Bahnhof in Spur 0. Überraschend hoch waren aber vor allem die Ergebnisse einiger als wenig spektakulär eingestufter Artikel. So erreichte ein Dampfloktender eines Märklin-Storchenbeins von Anfang des vorigen Jahrhunderts, aufgerufen zu 25 Euro, nach einem langen Bieterwettstreit die unerwartete Summe von 1100 Euro.</p>
+<p>Ein Spur-0-Personenwagen 1841 von 1903, aufgerufen zu 1500 Euro, erhielt bei 8200 Euro den Zuschlag.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 23. August 2014</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="nwz-2014-08-23">
+<p class="j-kicker">Ergebnisse · NWZ Göppingen · 23. August 2014</p>
+<h2 class="j-title">Zweitägige Sommerauktion gut besucht</h2>
+<p class="j-lead">Göppingen - Die zweitägige Sommerauktion des Auktionshauses Hohenstaufen GmbH in Göppingen war sehr gut besucht. Interessierte aus dem In- und Ausland waren zugegen, als die weit über 1000 Objekte zum Aufruf kamen. Überwiegend standen Erzeugnisse früherer Märklin-Produktion zum Verkauf. Von fünf bis 45 000 Euro reichten die Preise der Artikel, die im umfangreichen und aufwändig gestalteten Katalog angeboten wurden. Sehr viele Käufer nutzten die Möglichkeit des schriftlichen Vorgebots. Aber auch telefonisch wurde geboten. Zeitweise waren bis zu vier Telefone mit Fernbietern besetzt. Sie sorgten für eine besondere Spannung im Auktionssaal.</p>
+<p>Das Highlight der Versteigerung, eine Dampfmaschinenanlage mit Elektrizitätswerk von Märklin aus dem Jahr 1904, ging zum Aufrufpreis von 45 000 Euro an einen schriftlichen Vorbieter. Die Dampflokomotive aus der Zeit König Wilhelms II. von Württemberg von 1893 fand für 4800 Euro (im Katalog für 1200 Euro) einen Käufer und der Stuttgarter Bahnhof in Spur 0 wechselte für 2750 Euro den Besitzer.</p>
+<p class="j-source">Quelle: NWZ Göppingen, 23. August 2014</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2014-08-12">
+<p class="j-kicker">Vorschau · Stuttgarter Zeitung · 12. August 2014</p>
+<h2 class="j-title">Der Stuttgarter Hauptbahnhof in Blech</h2>
+<p class="j-lead">Es ist immerhin ein Abbild, dass auch nach dem Neubau des S-21-Tiefbahnhofs in Stuttgart das Stadtbild noch prägen wird: Die Front des Hauptbahnhofs. In Blech gibt es das Modell des Bonatzbaus von Märklin für Spur 0 seit 1936. Und es wird am Freitag und Samstag am Göppinger Rosenplatz im Auktionshaus Hohenstaufen meist bietend versteigert. Der Aufrufpreis liegt bei 2400 Euro. Damit hat noch König Wilhelm II. gespielt Bereits zum zweiten Mal bringt das Auktionshaus Spielzeugraritäten vornehmlich aus dem Hause Märklin unter den Hammer.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2014-stuttgarter-bahnhof.jpg" alt="Blechmodell des Stuttgarter Hauptbahnhofs mit Turm" loading="lazy" decoding="async"><figcaption>Der Stuttgarter Bahnhof für Spur 0. Foto: Auktionshaus Hohenstaufen</figcaption></figure>
+<p>Knapp 2000 Positionen kommen zum Aufruf, darunter das ein Modell des Storchenbeins in Spur 0 mit einer ganz besonderen Historie. „Damit hat der württembergische König Wilhelm II. noch gespielt“, erklärt der Auktionator Roland Gaugele. Der König und Erbauer des Stuttgarter Bahnhofs, für den Fortschritt und Eisenbahn zusammengehörten, sei einer der ersten Käufer des Modells gewesen. Die Märklin-Lokomotive des Typs A 1 mit der Artikelnummer 1020 wurde 1893 erstmals angeboten und sei die „Ur-Mutter“ aller späteren Spur 0 Eisenbahnen. Das legendäre Storchenbein wird zum Preis von 1200 Euro aufgerufen.</p>
+<p>Mehr als 100 Bieter werden erwartet Bei der ersten Auktion in Göppingen im Januar hatte ein Märklin-Blechschiff aus dem Jahr 1899 den Rekordpreis von 86?000 Euro erzielt, der Märklin Südbahnhof wurde für stolze 66?000 Euro ersteigert. Mehr als 100 Bieter waren vor Ort. International boten Sammler per Telefon mit. Die jetzige Auktion in der Rosenstraße 7 beginnt am Freitag um 13 Uhr und am Samstag um 10 Uhr. Eine Besichtigung ist am Freitag von 10 bis 17 Uhr und Samstag ab 9 Uhr möglich.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 12. August 2014</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2014-01-28">
+<p class="j-kicker">Ergebnisse · Stuttgarter Zeitung · 28. Januar 2014</p>
+<h2 class="j-title">86 000 Euro für erstes Märklin-Schiff</h2>
+<p class="j-lead">Göppingen - Märklin-Raritäten wie das erste große Blechschiff, eine Kutsche mit der schon Eugen Märklin mit seinen Kindern spielte oder ein großer Bahnhof in Top-Zustand sind am Wochenenden in Göppingen unter den Hammer gekommen. Rund 100 Bieter hatten die erste Versteigerung des Göppinger Auktionshauses Hohenstaufen am Rosenplatz besucht. Zum Aufruf kamen mehr als 600 Positionen. Den Zuschlag allerdings bekamen oft Bieter aus dem Ausland, die ihre Gebote schriftlich oder live am Telefon abgaben. Sammlern aus der Schweiz, Frankreich, Italien, Großbritannien und vor allem den USA hätten sich beteiligt, sagt Hans Georg Grupp vom Auktionshaus Hohenstaufen. „Etwa 65 Prozent des Umsatzes haben wir mit Telefonbietern gemacht“, fügt er hinzu.</p>
+<h3 class="j-sub">Südbahnhof bringt 66 000 Euro</h3>
+<p>Den höchsten Preis erzielte eine Rarität aus dem, Jahr 1899. Die mehr als ein Meter lange „Resolution“ war das erste große Blechschiff im Märklin-Programm. 86 000 Euro plus die 20 Prozent Aufgeld für das Auktionshaus war das Modell einem Sammler wert. Daneben gab es die Blechkutsche, die für 15 500 Euro einen neuen Besitzer fand oder ein große Dampfmaschine für 20 000 Euro. Der große „Südbahnhof“ aus dem Jahr 1909 wurde für stolze 24 000 Euro aufgerufen. Den Zuschlag gab Grupps Partner, der Auktionator Roland Gaugele, letztlich für 66 000 Euro.</p>
+<p>Neben den Einzelergebnissen ist Hans Georg Grupp aber auch mit Gesamtergebnis zufrieden. „Wir haben 70 Prozent der Angebote verkauft. Der Rest geht jetzt in den Nachverkauf“, erklärt er. Die nächste Auktion ist schon in Planung. Sie soll im Herbst dieses Jahres stattfinden.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 28. Januar 2014</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="nwz-2014-01-27">
+<p class="j-kicker">Ergebnisse · NWZ Göppingen · 27. Januar 2014</p>
+<h2 class="j-title">Spielzeug: „Resolution“ geht für 86.000 Euro weg</h2>
+<p class="j-lead">Bei der Versteigerung des Auktionshauses Hohenstaufen in dessen Räumen am Rosenplatz kamen Lokomotiven und altes Blechspielzeug der Firma Märklin, vereinzelt aber auch Raritäten anderer Firmen, wie etwa Fleischmann, zum Aufruf. Das Auktionshaus war im vergangenen Jahr vom früheren Märklin-Pressesprecher Roland Gaugele, vom Nachrichtenmagazin Spiegel schon als "Mister Märklin" geadelt, und dem vereidigten Sachverständigen für altes Blechspielzeug, Hans Georg Grupp, gegründet worden.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2014-kutsche-auktion.jpg" alt="Besucher betrachtet eine historische Märklin-Kutsche in einer Vitrine" loading="lazy" decoding="async"><figcaption>Eine Kutsche, mit der schon Eugen Märklin gespielt hatte, hat die Besucher interessiert. Das kleine Gefährt ging für 15.500 Euro weg.</figcaption></figure>
+<p>Bereits heute zählt es in diesem Gebiet zu den bedeutensten Auktionshäusern weltweit. Eberhard Haas hat seine Anfahrt aus Remshalden nicht bereut und will wieder kommen: "Das nächste Mal würde ich Geld mitbringen", sagt der Liebhaber von Blechspielzeug.</p>
+<p>Bieter waren aus ganz Europa angereist, vor allem aus den benachbarten Benelux-Staaten sowie aus Österreich und der Schweiz. Besonders scharf auf das Blechspielzeug aus good old Germany scheint man in Übersee zu sein. Mit Telefonbietern, die vor allem aus den USA zugeschaltet wurden, seien 65 Prozent des Umsatzes erzielt worden, verrät Grupp. Zahlreiche Interessenten für die über 600 Objekte der ersten Auktion des Hauses hatten sich bereits im Vorfeld gemeldet. "Steht die Leitung?", gehörte daher zu den regelmäßig von Roland Gaugele während der Auktion gestellten Fragen.</p>
+<p>Sie standen in Konkurrenz zu den Bietern im Saal, der zu Spitzenzeiten mit bis zu 100 Interessenten knallvoll war. Trotzdem war der Ablauf geordnet, es herrschte gespannte Stille. Wer allerdings die Präsentation der Objekte durch weiß behandschuhte Hände erwartete, wurde enttäuscht. Die jeweiligen Versteigerungsgegenstände wurden beim Aufruf mittels Beamer an die Leinwand hinter dem Auktionator geworfen. Zudem waren sie in einem Katalog verzeichnet.</p>
+<p>Auf besonderes Interesse stießen eine Kutsche aus dem Jahre 1895, mit der Eugen Märklin schon gespielt hatte, sowie das 1899 hergestellte, 105 Zentimeter lange Schiff "Resolution", das über einen noch immer intakten Originalantrieb (Uhrwerk) verfügt. 86.000 Euro war das Schiff einem Bieter wert. Die für 5000 Euro aufgerufene Kutsche ging bei 15 500 Euro weg. Weitere Schwergewichte waren eine Dampfmaschine, die 20.000 Euro erzielte. Für die größte Überraschung sorgte der "Südbahnhof" aus dem Jahre 1909, der für 66.000 Euro einen neuen Besitzer fand.</p>
+<p>Die Bieter sind scheue Wesen. Ein Teilnehmer aus dem Ostalbkreis verrät den Grund. Die wertvollen Eisenbahnen seien nicht nur für Liebhaber, sondern auch für Diebe höchst interessant. Gaugele weiß dies genau. Er trug maßgeblich zur Ergreifung der Täter des großen Raubs aus dem Märklinmuseum vor knapp zehn Jahren bei.</p>
+<p>Ziel des Auktionshauses ist es, Ansprechpartner für Sammler und Händler weltweit zu sein. "Ein Kundenstamm von über 1000 Adressen bietet für Sammler und Händler alter Spielsachen eine Plattform Objekte zu marktgerechten Preisen zu veräußern oder zu erwerben", betont Grupp. Um die angestrebte Rolle einnehmen zu können, solle das Marketing verstärkt werden. Die nächste Auktion ist für die Monate August/September geplant.</p>
+<p class="j-source">Quelle: NWZ Göppingen, 27. Januar 2014</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="stz-2013-12-30">
+<p class="j-kicker">Vorschau · Stuttgarter Zeitung · 30. Dezember 2013</p>
+<h2 class="j-title">Jede Menge Märklin unterm Hammer</h2>
+<p class="j-lead">Blechspielzeugraritäten wie das erste große Märklin-Dampfschiff aus dem Jahr 1899 oder eine Kutsche von 1895,mit der Eugen Märklin und seine Kinder gespielt haben sollen, werden am 25. Januar im Göppinger Auktionshaus Hohenstaufen am Rosenplatz versteigert. Insgesamt sind es weit mehr als 600 Posten. Nein, eine Genugtuung sei es nicht, Sammlerobjekte seines alten Arbeitgebers unter den Hammer zu bringen, betont Roland Gaugele. Einen Grund dazu hätte er. Noch vor fünf Jahren war der 62-Jährige der Pressesprecher der Firma Märklin. Vom Insolvenzverwalter ist er dann nach 30 Jahren im Unternehmen auch als Produktmanager wegrationalisiert worden.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2013-gaugele-grupp.jpg" alt="Roland Gaugele und Hans Georg Grupp an einer großen Märklin-Dampfmaschine" loading="lazy" decoding="async"><figcaption>Roland Gaugele (links) und Georg Grupp stehen schon unter Dampf: In vier Wochen versteigern sie Märklin-Raritäten.</figcaption></figure>
+<p>Zuvor hatte er unter anderem als „Undercoveragent“ einige Berühmtheit erlangt. Als es im Jahr 2005 nach dem spektakulären Millionenraub aus dem Märklin-Museum galt, Diebesgut als fingierter Aufkäufer in Wien zu identifizieren, stellte er sich zur Verfügung. Täter und Beute gingen den Ermittlern ins Netz. Gaugele hatte das Märklin-Museum unter seinen Fittichen, hatte auch eine große Museumswelt am Stammsitz konzipiert, die vom damaligen Eigentümer Kingsbridge jedoch storniert worden war. Und auch die ersten Pläne für die heutige Märklin-Erlebniswelt hat Roland Gaugele mitgestaltet.</p>
+<p>„Nach der überraschenden Kündigung ist mein ganzer Lebensplan durcheinandergewirbelt worden“, erzählt er. Doch auf seine Erfahrung als Märklin-Kenner und seine Kontakte in Sammlerkreise kann er bauen.Er habe seither einige Märklin-Ausstellungen kuratiert und sich als Gutachter angeboten. „Das füllt aber nicht die ganze Arbeitszeit aus“, erklärt er. So kamer auf Auktionen.Zwei davon hat er schon durchgeführt, standesgemäß im Märklin-Saal der Stadthalle.Nun hat er das Auktionshaus Hohenstaufen gegründet zusammen mit seinem Partner Georg Grupp, der vereidigter Sachverständiger für Blechspielzeug und Eisenbahnen ist.</p>
+<p>„Wir wollen uns unter den Top Drei der Auktionshäuser für Blechspielzeug etablieren“, erläutert Georg Grupp. Für die erste Auktion am 25. Januar erwarten er und Gaugele ordentlichen Zulauf. Die Einlieferungen kämen nicht nur aus ganz Deutschland, sondern auch aus dem Ausland. Zudem erwartet der Auktionator Bieter aus aller Welt, die zum Teil per Telefon zur Versteigerung zugeschaltet werden.</p>
+<p>Neben der erwähnten Kutsche aus dem Märklin’schen Familienbesitz, die für 5000 Euro zum Aufruf kommen soll, und dem mehr als einen Meter langen Dampfschiff Resolution, das ob seines sehr guten Zustands einige Zigtausend Euro wert sein sollte, kommen etliche Liebhaberstücke wie der Stuttgarter Bahnhof oder Dampfmaschinenunikate unter den Hammer. Aber auch Zubehör und Ersatzteile werden angeboten. „Zu 95 Prozent werden Märklin- Artikel zum Aufruf kommen. Es gibt aber auch Liebhaberstücke von Bing, Fleischmann oder anderen Herstellern in unserem Katalog“, erklärt Roland Gaugele. Die Versteigerung findet am Samstag, 25. Januar, um 10 Uhr statt.</p>
+<p>Am 24. Januar von 10 bis 17 Uhr und am 25. Januar von 9 Uhr an können die Angebote vorbesichtigt werden.</p>
+<p class="j-source">Quelle: Stuttgarter Zeitung, 30. Dezember 2013</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="bild-2013-12-20">
+<p class="j-kicker">Presse · Bild Stuttgart · 20. Dezember 2013</p>
+<h2 class="j-title">Märklin-Kutsche unterm Hammer</h2>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2013-bild-zeitung.jpg" alt="Zeitungsausschnitt „Märklin-Kutsche unterm Hammer“ mit Foto einer Frau, die die Kutsche hält" loading="lazy" decoding="async"><figcaption>Zeitungsausschnitt, Bild Stuttgart vom 20. Dezember 2013</figcaption></figure>
+<p class="j-source">Quelle: Bild Stuttgart, 20. Dezember 2013</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+<article class="j-art" id="pm-2013-12-17">
+<p class="j-kicker">Pressemitteilung · Auktionshaus Hohenstaufen · 17. Dezember 2013</p>
+<h2 class="j-title">Eugen Märklins Kutsche von 1895 wird versteigert</h2>
+<p class="j-lead">Göppingen, 17. Dezember 2013. Die Kutsche, mit der Eugen Märklin (aus der Gründer-generation der Firma Märklin) gegen Ende des 19. Jahrhunderts mit seinen Kindern spielte, kommt am 25. Januar 2014 im Auktionshaus Hohenstaufen in Göppingen zum Aufruf. Über mehrere Generationen hinweg befand sich das seltene Exponat in Familienbesitz.</p>
+<figure class="j-fig j-fig-wide"><img src="bilder/presse/2013-kutsche-1895.jpg" alt="Frau hält eine rote Märklin-Kutsche von 1895 mit Kutscherfigur" loading="lazy" decoding="async"><figcaption>Die Kutsche, mit der Eugen Märklin gegen Ende des 19. Jahrhunderts mit seinen Kindern spielte. Versteigert am 25. Januar 2014.</figcaption></figure>
+<p>Die Kutsche in der Originalausführung von 1895 und stellt eines der ersten technischen Produkte von Märklin nach der Ära der Mädchenspielzeuge dar. Sie wurde im ersten Märklin-Katalog von 1895 unter der Nummer 1418 angeboten.</p>
+<p>Die Kutsche ist auf € 5000 taxiert.</p>
+<p>Fast ebenso alt wie die Kutsche ist das erste große Märklin-Schiff, die „Resolution“, die 1899 hergestellt und angeboten wurde. Mit 105 cm Länge beeindruckt sie im Modell und hat alle Attribute des großen Vorbilds: vier Rettungsboote, 2 Kamine, 2 Masten und einen großen eisernen Anker. Angetrieben wird das Schiff von einem starken, immer noch intakten Uhrwerk.</p>
+<p>Die „Resolution“ wird auf einen oberen fünfstelligen Eurobetrag taxiert. Eine Größenordnung, die hinsichtlich Erhaltung und Ausführung nicht überrascht.</p>
+<p>Das Auktionshaus Hohenstaufen in Göppingen versteigert Blechspielzeug und Modell-eisenbahnen und nimmt Versteigerungsaufträge jederzeit an. Die Verantwortlichen sind Hans Georg Grupp, vereidigter Sachverständiger für Blechspielzeug und Eisenbahnen und Roland Gaugele, Auktionator und bis 2009 30 Jahre für Märklin tätig (Märklin-Museum, historisches Produktarchiv, Produktmanagement, Pressearbeit).</p>
+<p>Der Sitz des Auktionshauses Hohenstaufen befindet sich am Rosenplatz 11 in 73033 Göppingen.</p>
+<h3 class="j-sub">Auktionstermin : Samstag, 25. Januar 2014 ab 10.00 Uhr</h3>
+<p>Vorbesichtigung : Freitag, 24. Januar 2014 von 10.00 Uhr bis 17.00 Uhr</p>
+<h3 class="j-sub">Samstag, 25. Januar 2014 ab 9.00 Uhr</h3>
+<p class="j-source">Quelle: Auktionshaus Hohenstaufen, 17. Dezember 2013</p>
+<a class="j-top" href="#uebersicht">↑ Zur Übersicht</a>
+</article>
+    <div style="max-width: 720px; margin: 96px auto 0; padding: 0 clamp(16px, 3vw, 40px); display: flex; gap: 12px; flex-wrap: wrap">
+      <a href="index.html" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; background: #121212; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">← Zur Startseite</a>
+      <a href="#uebersicht" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; border-radius: 999px; border: 1px solid #CFCAC1; text-decoration: none; font-weight: 600; font-size: 15px">↑ Zur Übersicht</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="kontakt" style="background: #121212; color: #F4F2EE; padding: 96px clamp(16px, 3vw, 40px) 32px; box-sizing: border-box">
+    <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+        <form style="flex: 1.4 1 360px; display: flex; flex-direction: column; gap: 16px; max-width: 520px">
+          <h2 style="margin: 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em">Auktionstermine per E-Mail.</h2>
+          <label for="hs-mail" style="font-size: 14px; color: #CFCBC2">Ihre E-Mail-Adresse</label>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            <input id="hs-mail" type="email" placeholder="name@beispiel.de" style="flex: 1 1 220px; min-height: 48px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; border: 1px solid #4A4842; background: #1E1D1B; color: #F4F2EE; font: inherit">
+            <button type="button" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: #F4F2EE; color: #121212; font: inherit; font-weight: 600; cursor: pointer">Anmelden</button>
+          </div>
+        </form>
+        <div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Auktionen</span>
+          <a href="index.html#auktionen" style="color: #F4F2EE; text-decoration: none">Kommende Auktionen</a>
+          <a href="index.html#auktionen" style="color: #F4F2EE; text-decoration: none">Online-Kataloge</a>
+          <a href="index.html#zahlen" style="color: #F4F2EE; text-decoration: none">Ergebnisse</a>
+          <a href="index.html#bieten" style="color: #F4F2EE; text-decoration: none">So bieten Sie mit</a>
+        </div>
+        <div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Verkaufen</span>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Online-Schätzung</a>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Nachlässe</a>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Sammlungen</a>
+          <a href="journal.html" style="color: #F4F2EE; text-decoration: none">Journal</a>
+        </div>
+        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.5">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Kontakt</span>
+          <span>Rosenplatz 11<br>73033 Göppingen</span>
+          <span>Tel. +49 7161 8083940<br>Fax +49 7161 21654<br>info@auktion-hohenstaufen.de</span>
+          <span style="color: #CFCBC2">Mo–Fr 10–17 Uhr</span>
+        </div>
+      </div>
+      <!-- Markenzeichen wie im Briefpapier: roter Balken + Wortmarke + rotes Quadrat -->
+      <div style="--h: clamp(40px, 6vw, 88px); display: flex; align-items: flex-end; gap: clamp(10px, 1.6vw, 22px)">
+        <span aria-hidden="true" style="flex: 1 1 auto; height: calc(var(--h) * 0.431); background: #C51415"></span>
+        <img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" style="flex: 0 0 auto; height: var(--h); width: auto; display: block">
+        <span aria-hidden="true" style="flex: 0 0 auto; width: calc(var(--h) * 0.39); height: calc(var(--h) * 0.431); background: #C51415"></span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; font-size: 13px; color: #ABA79E; border-top: 1px solid #2C2B28; padding-top: 24px">
+        <span>© 2026 Auktionshaus Hohenstaufen</span>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap">
+          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Impressum</a>
+          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Datenschutz</a>
+          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Versteigerungsbedingungen</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){var n=document.querySelector('.hs-nav'),b=n&&n.querySelector('.hs-menu-btn');if(!b)return;
+function set(o){n.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')}
+b.addEventListener('click',function(){set(!n.classList.contains('is-open'))});
+n.querySelectorAll('.hs-links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+document.addEventListener('click',function(e){if(!n.contains(e.target))set(false)});})();
+</script>
+</body>
+</html>
