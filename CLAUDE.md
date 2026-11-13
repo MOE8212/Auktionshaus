@@ -18,7 +18,7 @@ Betreut von Michael Eckert. Ziel aktuell: erste Version mit dem Kunden abstimmen
 ## Design-Entscheidungen
 
 Stil-Vorbilder (vom Kunden/Michael ausgewählt):
-- **ViV MGMT** (vivmgmt.com): riesige Wortmarke über volle Breite, viel Weißraum. Kritik: zu viele Bilder → sparsam mit Bildern.
+- **ViV MGMT** (vivmgmt.com): viel Weißraum; die riesige Wortmarke wurde nach Einbau des Logos entfernt (oben und im Footer). Kritik: zu viele Bilder → sparsam mit Bildern.
 - **Vantra Studio** (vantra-studio.webflow.io): Hero als abgerundete Bildkarte, schwebende Pillen-Navigation, Marken-Laufband, große Statistik-Zahlen, Liste „gerade laufend“ mit Fortschrittsbalken.
 - **The Art Newspaper – London Gallery Weekend 2021**: Journal-/Beitragsdarstellung (rote Rubrik-Labels, große Überschriften, redaktionelles Layout).
 
@@ -29,7 +29,7 @@ Festgelegt:
 - Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). Für die Website ohne grauen Hintergrund/Kachelmuster neu als `bilder/logo-hell.svg` (#F4F2EE, Navigation + Footer) und `bilder/logo-dunkel.svg` (#121212/#5E5A52, Reserve für helle Flächen). Footer greift das Briefpapier-Motiv auf: roter Balken + Wortmarke + rotes Quadrat (#B3261E). `bilder/loewe.png` wird nicht mehr verwendet.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
-Seitenreihenfolge: Navigation → Wortmarke → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
+Seitenreihenfolge: Navigation (Logo) → Einleitungszeile → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
 
 ## Inhalte: echt vs. erfunden
 
