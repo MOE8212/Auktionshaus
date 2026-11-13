@@ -11,6 +11,41 @@
 <style>
 body{margin:0;background:#F4F2EE}
 a{color:#121212}a:hover{color:#B3261E}
+/* Navigation */
+.hs-nav{position:relative;display:flex;align-items:center;gap:28px;background:#121212;color:#F4F2EE;border-radius:999px;padding:6px 6px 6px 22px;font-size:14px;box-sizing:border-box}
+.hs-brand{display:inline-flex;align-items:center;gap:10px;color:#F4F2EE;text-decoration:none;font-weight:800;letter-spacing:.1em;font-size:13px;white-space:nowrap}
+.hs-brand:hover{color:#F4F2EE}
+.hs-links{display:flex;gap:22px}
+.hs-links a{color:#D9D6CF;text-decoration:none}
+.hs-links a:hover{color:#FFFFFF}
+.hs-cta{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;background:#B3261E;color:#FFFFFF;border-radius:999px;padding:0 20px;text-decoration:none;font-weight:600;white-space:nowrap}
+.hs-cta:hover{color:#FFFFFF;background:#9A1F18}
+.hs-menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:0;background:#2A2926;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto}
+.hs-menu-btn span{display:block;width:16px;height:2px;border-radius:1px;background:#F4F2EE;transition:transform .2s}
+.hs-nav.is-open .hs-menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.hs-nav.is-open .hs-menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width: 860px){
+  .hs-nav{width:100%;max-width:560px;gap:8px;padding:6px 6px 6px 18px}
+  .hs-brand{margin-right:auto}
+  .hs-cta{padding:0 16px}
+  .hs-menu-btn{display:inline-flex}
+  .hs-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:#121212;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(18,18,18,.25)}
+  .hs-nav.is-open .hs-links{display:flex}
+  .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#F4F2EE}
+  .hs-links a+a{border-top:1px solid #2C2B28}
+}
+@media (max-width: 359px){.hs-brand{font-size:0;gap:0}.hs-brand img{height:26px!important}}
+/* Hero */
+.hs-hero{position:relative;border-radius:24px;overflow:hidden;background:#0A1E4A;min-height:clamp(560px,56vw,820px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(24px,3vw,40px);box-sizing:border-box;color:#FFFFFF}
+.hs-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.hs-hero-meta{position:relative;display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.hs-hero-h{position:relative;margin:0;font-size:clamp(44px,5.6vw,88px);line-height:.92;font-weight:700;letter-spacing:-.04em}
+@media (max-width: 700px){
+  .hs-hero{min-height:0;padding:0;gap:0;justify-content:flex-start;background:#03081B}
+  .hs-hero-img{position:relative;inset:auto;height:auto;aspect-ratio:4/3;object-position:center 30%}
+  .hs-hero-h{order:2;padding:4px 22px 0;font-size:clamp(40px,12vw,56px)}
+  .hs-hero-meta{order:3;flex-direction:column;padding:20px 22px 24px;font-size:11px;font-weight:500;color:#D6E2F5}
+}
 @keyframes hs-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hs-track{animation:hs-marquee 45s linear infinite}
 @keyframes hs-marquee-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
@@ -26,18 +61,19 @@ a{color:#121212}a:hover{color:#B3261E}
 
 <div style="background: #F4F2EE; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
 
-  <!-- Navigation: schwebende Pille -->
+  <!-- Navigation: schwebende Pille (mobil: eine Zeile + Menü) -->
   <div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
-    <nav aria-label="Hauptnavigation" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; justify-content: center; background: #121212; color: #F4F2EE; border-radius: 999px; padding: 6px 6px 6px 22px; font-size: 14px">
-      <a href="#top" style="display: inline-flex; align-items: center; gap: 10px; color: #F4F2EE; text-decoration: none; font-weight: 800; letter-spacing: 0.1em; font-size: 13px"><img src="bilder/loewe.png" alt="" style="height: 22px; width: auto; display: block">HOHENSTAUFEN</a>
-      <div style="display: flex; gap: 22px; flex-wrap: wrap">
-        <a href="#auktionen" style="color: #D9D6CF; text-decoration: none">Auktionen</a>
-        <a href="#verkaufen" style="color: #D9D6CF; text-decoration: none">Einliefern</a>
-        <a href="#zahlen" style="color: #D9D6CF; text-decoration: none">Ergebnisse</a>
-        <a href="#journal" style="color: #D9D6CF; text-decoration: none">Journal</a>
-        <a href="#kontakt" style="color: #D9D6CF; text-decoration: none">Kontakt</a>
+    <nav class="hs-nav" aria-label="Hauptnavigation">
+      <a href="#top" class="hs-brand"><img src="bilder/loewe.png" alt="" style="height: 22px; width: auto; display: block">HOHENSTAUFEN</a>
+      <div class="hs-links" id="hs-links">
+        <a href="#auktionen">Auktionen</a>
+        <a href="#verkaufen">Einliefern</a>
+        <a href="#zahlen">Ergebnisse</a>
+        <a href="#journal">Journal</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
-      <a href="#bieten" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; background: #B3261E; color: #FFFFFF; border-radius: 999px; padding: 0 20px; text-decoration: none; font-weight: 600">Mitbieten</a>
+      <a href="#bieten" class="hs-cta">Mitbieten</a>
+      <button type="button" class="hs-menu-btn" aria-expanded="false" aria-controls="hs-links" aria-label="Menü öffnen"><span></span><span></span></button>
     </nav>
   </div>
 
@@ -50,30 +86,32 @@ a{color:#121212}a:hover{color:#B3261E}
     <h1 aria-label="Auktionshaus Hohenstaufen" style="margin: 20px 0 0; font-size: clamp(36px, 12vw, 184px); line-height: 0.84; font-weight: 800; letter-spacing: -0.045em; text-transform: uppercase; white-space: nowrap">Hohenstaufen</h1>
   </header>
 
-  <section aria-label="Nächste Auktion" style="max-width: 1440px; margin: 28px auto 0; padding: 0 clamp(16px, 3vw, 40px); box-sizing: border-box">
-    <div style="position: relative; border-radius: 24px; overflow: hidden; background: #0A1E4A; min-height: clamp(560px, 56vw, 820px); display: flex; flex-direction: column; justify-content: space-between; gap: 32px; padding: clamp(24px, 3vw, 40px); box-sizing: border-box; color: #FFFFFF">
-      <img src="bilder/hero_glossy.jpg" alt="Märklin-Raddampfer „Rheingold“ in Weiß und Rot auf glänzend blauem Studiohintergrund mit Spiegelung" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block">
-      <div style="position: relative; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
-        <span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Märklin 5065 · „Rheingold“-Raddampfer · 45 cm</span>
-        <span style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #D6E2F5">Zuschlag 17.01.2026 · € 28.000</span>
+  <section style="max-width: 1440px; margin: 28px auto 0; padding: 0 clamp(16px, 3vw, 40px); box-sizing: border-box">
+    <div class="hs-hero">
+      <img class="hs-hero-img" src="bilder/hero_glossy.jpg" alt="Märklin-Raddampfer „Rheingold“ in Weiß und Rot auf glänzend blauem Studiohintergrund mit Spiegelung">
+      <div class="hs-hero-meta">
+        <span>Märklin 5065 · „Rheingold“-Raddampfer · 45&nbsp;cm</span>
+        <span style="color: #D6E2F5">Zuschlag 17.01.2026 · €&nbsp;28.000</span>
       </div>
-      <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap">
-        <h2 style="margin: 0; font-size: clamp(44px, 5.6vw, 88px); line-height: 0.92; font-weight: 700; letter-spacing: -0.04em">Sammeln.<br>Bieten.<br>Bewahren.</h2>
-        <div style="background: rgba(10, 16, 32, 0.72); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px; padding: 22px; width: 320px; max-width: 100%; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
-          <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B9C3D6">Nächste Auktion</span>
-          <span style="font-size: 26px; font-weight: 600; letter-spacing: -0.02em">Sa, 23. Januar 2027</span>
-          <span style="font-size: 14px; color: #D3DAE6">Große Spielzeugauktion<br>Vorbesichtigung ab 18. Januar · Rosenplatz 11</span>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap">
-            <a href="#auktionen" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; background: #FFFFFF; color: #121212; text-decoration: none; font-weight: 600; font-size: 14px">Katalog ansehen</a>
-            <a href="#bieten" style="display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.4); color: #FFFFFF; text-decoration: none; font-size: 14px">Vorgebot abgeben</a>
-          </div>
-        </div>
+      <h2 class="hs-hero-h">Sammeln.<br>Bieten.<br>Bewahren.</h2>
+    </div>
+
+    <!-- Nächste Auktion: eigene Leiste unter dem Bild -->
+    <div aria-label="Nächste Auktion" role="region" style="margin-top: 16px; background: #FFFFFF; border-radius: 24px; padding: clamp(22px, 2.6vw, 36px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 48px">
+      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #B3261E; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #B3261E; display: inline-block"></span>Nächste Auktion</span>
+        <span style="font-size: clamp(30px, 3vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05">Sa, 23. Januar 2027</span>
+      </div>
+      <p style="flex: 1 1 260px; margin: 0; font-size: 16px; line-height: 1.5; color: #4A463F"><span style="font-weight: 600; color: #121212">Große Spielzeugauktion</span><br>Vorbesichtigung ab 18. Januar · Rosenplatz 11, Göppingen</p>
+      <div style="flex: 0 1 auto; display: flex; gap: 8px; flex-wrap: wrap">
+        <a href="#auktionen" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; background: #121212; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Katalog ansehen</a>
+        <a href="#bieten" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1px solid #CFCAC1; color: #121212; text-decoration: none; font-weight: 600; font-size: 15px">Vorgebot abgeben</a>
       </div>
     </div>
   </section>
 
   <!-- Statement + Markenband (Vantra) -->
-  <section style="max-width: 1440px; margin: 0 auto; padding: 160px clamp(16px, 3vw, 40px) 140px; box-sizing: border-box; text-align: center">
+  <section style="max-width: 1440px; margin: 0 auto; padding: clamp(96px, 11vw, 160px) clamp(16px, 3vw, 40px) clamp(96px, 10vw, 140px); box-sizing: border-box; text-align: center">
     <p style="margin: 0 auto; max-width: 940px; font-size: clamp(28px, 3.4vw, 48px); line-height: 1.14; font-weight: 600; letter-spacing: -0.025em">Seit 2013 bringen wir Märklin und historisches Blechspielzeug zu den Sammlern, <span style="color: #8A867D">die ihren Wert erkennen – direkt aus Göppingen, der Heimat von Märklin.</span></p>
     <p style="margin: 72px 0 24px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #5E5A52">Marken, die bei uns unter den Hammer kommen</p>
     <div style="overflow: hidden; max-width: 1100px; margin: 0 auto">
@@ -283,5 +321,13 @@ a{color:#121212}a:hover{color:#B3261E}
   </footer>
 </div>
 
+<script>
+(function(){var n=document.querySelector('.hs-nav'),b=n&&n.querySelector('.hs-menu-btn');if(!b)return;
+function set(o){n.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')}
+b.addEventListener('click',function(){set(!n.classList.contains('is-open'))});
+n.querySelectorAll('.hs-links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+document.addEventListener('click',function(e){if(!n.contains(e.target))set(false)});})();
+</script>
 </body>
 </html>
