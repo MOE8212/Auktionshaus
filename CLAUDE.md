@@ -13,6 +13,7 @@ Betreut von Michael Eckert. Ziel aktuell: erste Version mit dem Kunden abstimmen
 
 - `index.html` – Startseite, eine Datei, reines HTML mit Inline-Styles, keine Build-Tools
 - `journal.html` – Journalseite mit allen Presseberichten der alten Website (2013–2019), gleiche Navigation/Footer wie die Startseite (CSS-Block aus `index.html` übernommen – bei Änderungen an Navigation/Footer beide Seiten anpassen)
+- `ueber-uns.html` – Über uns: Gründer (Foto `bilder/presse/2013-gaugele-grupp.jpg`), „So arbeiten wir“, Meilensteine mit Links ins Journal, Kontakt-Aufruf. Alle Aussagen stammen aus den Presseberichten im Journal; der Original-Text „Über uns“ der alten Website war nicht abrufbar (Zertifikat abgelaufen, Webarchiv für das Abruf-Werkzeug gesperrt). **Mit dem Kunden abstimmen:** Ist Roland Gaugele noch aktiv? Ist Beate Grupp Teil des Teams? Fehlen weitere Mitarbeiter? Der „Über uns“-Link steht in Navigation und Footer aller Seiten.
 - `impressum.html`, `datenschutz.html`, `versteigerungsbedingungen.html` – Rechtsseiten als **Entwürfe** (gleiche Navigation/Footer, aus `journal.html` abgeleitet); offene Angaben rot markiert (`.lg-ph`): HRB, USt-IdNr, §34b-Behörde, Aufgeld, Fristen usw. Versteigerungsbedingungen = Mustertext, durch gültige Fassung des Kunden ersetzen. Alte Website war wegen abgelaufenem Zertifikat nicht abrufbar.
 - `medien/` – Audio/Video/PDF aus der alten Presseseite (SWR-Beiträge, Zarenzug-PDF)
 - `bilder/` – aufbereitete Bilder (siehe unten)
