@@ -101,5 +101,6 @@ Umgesetzt (alle Seiten): eigener `<title>` und `meta description` (≤ 160 Zeich
 
 - Michael arbeitet knapp und lösungsorientiert, iteriert schnell anhand von Screenshots.
 - Antworten auf Deutsch, strukturiert, ohne Füllstoff.
+- **Vor jedem Commit prüfen:** `node tools/check.mjs` ausführen. Es erstellt Screenshots aller Seiten (Handy 390 px und Desktop 1440 px, ganze Seite) in `%TEMP%/hs-check` und meldet übergroße Bilder sowie horizontalen Überlauf. Die Screenshots der geänderten Bereiche ansehen, vor allem mobil. Normale Edge-Headless-Screenshots taugen mobil nicht, weil sie mindestens ca. 500 px breit rendern. Hintergrund: Ein Bild mit `height`-Attribut ohne `height: auto` war online 1600 px hoch. Deshalb steht in allen Seiten `img{max-width:100%;height:auto}`.
 - **Nach jeder Aktion automatisch committen und pushen** (ohne Nachfrage): Commit auf `main` mit aussagekräftiger deutscher Nachricht (Betreff + Stichpunkte, was geändert wurde), danach `git push origin main`. GitHub Pages aktualisiert sich automatisch.
 - Maßgeblich ist immer der **lokale Ordner**: Das Repo soll genau den lokalen Stand abbilden (`git add -A`). Ausgenommen sind nur die Einträge in `.gitignore`: `Pictues/`, die Original-Logovorlage und `*.crdownload`.
