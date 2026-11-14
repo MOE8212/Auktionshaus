@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Versteigerungsbedingungen – Auktionshaus Hohenstaufen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#E8E4DC}
+a{color:#121212}a:hover{color:#C51415}
+/* Navigation: schwarze Pille, Wortmarke hell, roter Balken wie im Briefkopf */
+.hs-nav{--lh:30px;--padl:54px;--red:#C51415;--rr:calc(var(--lh) * .08);position:relative;display:flex;align-items:center;gap:28px;background:#121212;color:#F4F2EE;border-radius:999px;padding:6px 6px 6px var(--padl);font-size:14px;box-sizing:border-box;box-shadow:0 10px 30px rgba(18,18,18,.18)}
+.hs-nav-deco{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.hs-nav-deco::before{content:"";position:absolute;left:0;width:calc(var(--padl) - var(--lh) * .31);top:calc(50% - var(--lh) / 2 + var(--lh) * .5633);height:calc(var(--lh) * .4307);background:var(--red);border-radius:0 var(--rr) var(--rr) 0}
+.hs-brand{position:relative;display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.hs-logo{display:flex;align-items:flex-end}
+.hs-logo img{height:var(--lh);width:auto;display:block}
+.hs-sq{display:block;width:calc(var(--lh) * .39);height:calc(var(--lh) * .4307);margin-left:calc(var(--lh) * .43);background:var(--red);border-radius:var(--rr)}
+.hs-links{display:flex;gap:22px}
+.hs-links a{color:#D9D6CF;text-decoration:none}
+.hs-links a:hover,.hs-links a[aria-current="page"]{color:#FFFFFF}
+.hs-links a[aria-current="page"]{font-weight:600}
+.hs-cta{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;background:#C51415;color:#FFFFFF;border-radius:999px;padding:0 20px;text-decoration:none;font-weight:600;white-space:nowrap}
+.hs-cta:hover{color:#FFFFFF;background:#A51011}
+.hs-menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:0;background:#2A2926;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto}
+.hs-menu-btn span{display:block;width:16px;height:2px;border-radius:1px;background:#F4F2EE;transition:transform .2s}
+.hs-nav.is-open .hs-menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.hs-nav.is-open .hs-menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+@media (max-width: 860px){
+  .hs-nav{--lh:26px;--padl:36px;width:100%;max-width:560px;gap:8px}
+  .hs-brand{margin-right:auto}
+  .hs-cta{padding:0 16px}
+  .hs-menu-btn{display:inline-flex}
+  .hs-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:#121212;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(18,18,18,.28)}
+  .hs-nav.is-open .hs-links{display:flex}
+  .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#F4F2EE}
+  .hs-links a+a{border-top:1px solid #2C2B28}
+}
+@media (max-width: 389px){.hs-nav{--lh:22px;--padl:28px}.hs-cta{padding:0 12px;font-size:13px}}
+/* Statistik mobil: 2x2 */
+@media (max-width: 700px){
+  .hs-stats{grid-template-columns:1fr 1fr!important;gap:32px 16px!important;margin-top:36px!important}
+  .hs-stats>div{padding-top:14px!important;gap:6px!important}
+  .hs-stats>div>span:nth-child(1){font-size:min(40px,19cqi)!important;letter-spacing:-.04em!important}
+  .hs-stats>div>span:nth-child(2){font-size:14px!important}
+  .hs-stats>div>span:nth-child(3){font-size:13px!important;line-height:1.35}
+}
+/* Hero */
+.hs-hero{position:relative;border-radius:24px;overflow:hidden;background:#0A1E4A;min-height:clamp(560px,56vw,820px);display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:clamp(24px,3vw,40px);box-sizing:border-box;color:#FFFFFF}
+.hs-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.hs-hero-meta{position:relative;display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.hs-hero-h{position:relative;margin:0;font-size:clamp(44px,5.6vw,88px);line-height:.92;font-weight:700;letter-spacing:-.04em}
+@media (max-width: 700px){
+  .hs-hero{min-height:0;padding:0;gap:0;justify-content:flex-start;background:#03081B}
+  .hs-hero-img{position:relative;inset:auto;height:auto;aspect-ratio:4/3;object-position:center 30%}
+  .hs-hero-h{order:2;padding:4px 22px 0;font-size:clamp(40px,12vw,56px)}
+  .hs-hero-meta{order:3;flex-direction:column;padding:20px 22px 24px;font-size:11px;font-weight:500;color:#D6E2F5}
+}
+@keyframes hs-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hs-track{animation:hs-marquee 45s linear infinite}
+@keyframes hs-marquee-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.hs-lots{animation:hs-marquee-rev 90s linear infinite}
+.hs-lots-wrap:hover .hs-lots{animation-play-state:paused}
+.hs-lot{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease;position:relative}
+.hs-lot:hover{transform:scale(1.08);z-index:2;box-shadow:0 20px 44px rgba(18,18,18,.16)}
+@media (prefers-reduced-motion: reduce){.hs-track,.hs-lots{animation:none}.hs-lots-wrap{overflow-x:auto}.hs-lot{transition:none}}
+</style>
+<style>
+.lg-wrap{max-width:820px;margin:0 auto;padding:0 clamp(16px,3vw,40px);box-sizing:content-box}
+.lg-back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:600;text-decoration:none}
+.lg-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#C51415}
+.lg-h1{margin:18px 0 0;font-weight:700;font-size:clamp(40px,7vw,88px);line-height:.95;letter-spacing:-.04em}
+.lg-stand{margin:20px 0 0;font-size:14px;color:#5E5A52}
+.lg-note{margin:40px 0 0;padding:18px 22px;border-radius:16px;background:#FFFFFF;border-left:4px solid #C51415;font-size:15px;line-height:1.5;color:#2B2925}
+.lg-card{margin:56px 0 120px;background:#FFFFFF;border-radius:24px;padding:clamp(24px,5vw,64px);box-sizing:border-box}
+.lg-card h2{margin:48px 0 0;font-size:clamp(22px,2.2vw,28px);line-height:1.2;font-weight:600;letter-spacing:-.02em}
+.lg-card h2:first-child{margin-top:0}
+.lg-card h3{margin:28px 0 0;font-size:18px;font-weight:600}
+.lg-card p,.lg-card li{font-size:17px;line-height:1.65;color:#2B2925}
+.lg-card p{margin:14px 0 0}
+.lg-card ul,.lg-card ol{margin:14px 0 0;padding-left:22px}
+.lg-card li+li{margin-top:6px}
+.lg-card a{text-decoration:underline;text-underline-offset:2px}
+.lg-ph{background:#FBE7E7;color:#9C0F10;border-radius:4px;padding:0 4px;font-weight:600}
+@media (max-width:600px){.lg-card p,.lg-card li{font-size:16px}}
+</style>
+</head>
+<body>
+<div style="background: #E8E4DC; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
+  <div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
+    <nav class="hs-nav" aria-label="Hauptnavigation">
+      <span class="hs-nav-deco" aria-hidden="true"></span>
+      <a href="index.html" class="hs-brand"><span class="hs-logo"><img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen – zur Startseite" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
+      <div class="hs-links" id="hs-links">
+        <a href="index.html#auktionen">Auktionen</a>
+        <a href="index.html#verkaufen">Einliefern</a>
+        <a href="index.html#zahlen">Ergebnisse</a>
+        <a href="journal.html">Journal</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a href="index.html#bieten" class="hs-cta">Mitbieten</a>
+      <button type="button" class="hs-menu-btn" aria-expanded="false" aria-controls="hs-links" aria-label="Menü öffnen"><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <main class="lg-wrap" style="padding-top: clamp(40px, 5vw, 64px)">
+    <a class="lg-back" href="index.html">← Zur Startseite</a>
+    <div style="margin-top: 40px">
+      <span class="lg-kicker">Rechtliches</span>
+      <h1 class="lg-h1">Versteigerungs&shy;bedingungen</h1>
+      <p class="lg-stand">Stand: November 2026</p>
+    </div>
+    <p class="lg-note"><strong>Hinweis:</strong> Entwurf / Mustertext. Verbindlich sind ausschließlich die vom Auktionshaus Hohenstaufen herausgegebenen Versteigerungsbedingungen im jeweiligen Katalog. Vor Livegang durch die gültige Fassung des Kunden ersetzen.</p>
+    <div class="lg-card">
+<h2>§ 1 Versteigerer</h2>
+<p>Die Auktionshaus Hohenstaufen GmbH, Rosenplatz 11, 73033 Göppingen (nachfolgend „Versteigerer“), versteigert als Kommissionär im eigenen Namen und für Rechnung der Einlieferer, deren Namen nicht genannt werden. Die Versteigerung ist eine öffentliche Versteigerung im Sinne von § 383 Abs. 3 BGB.</p>
+
+<h2>§ 2 Vorbesichtigung und Zustand</h2>
+<p>Sämtliche Objekte können vor der Versteigerung zu den im Katalog genannten Zeiten besichtigt und geprüft werden. Die Objekte sind gebraucht und werden in dem Zustand versteigert, in dem sie sich beim Zuschlag befinden.</p>
+<p>Katalogbeschreibungen, Zustandsangaben und Abbildungen werden nach bestem Wissen und Gewissen erstellt. Sie sind keine Garantien im Rechtssinne und keine vertraglich vereinbarten Beschaffenheiten. Altersbedingte Gebrauchsspuren, Retuschen, Ergänzungen und fehlende Teile werden angegeben, soweit sie dem Versteigerer bekannt sind. Funktionsfähigkeit von Uhrwerken, Dampfmaschinen und Elektromotoren wird nicht zugesichert.</p>
+
+<h2>§ 3 Gebote und Zuschlag</h2>
+<p>Gesteigert wird in der Regel um ca. 10 % des vorangegangenen Gebots; der Versteigerer kann davon abweichen. Der Zuschlag wird erteilt, wenn nach dreimaligem Aufruf eines Gebots kein höheres Gebot abgegeben wird. Mit dem Zuschlag kommt der Kaufvertrag zustande.</p>
+<p>Der Versteigerer kann den Zuschlag verweigern oder unter Vorbehalt erteilen. Bei gleich hohen Geboten entscheidet das Los. Bei Unklarheiten kann ein Objekt erneut ausgeboten werden. Der Versteigerer ist berechtigt, Lose zu vereinen, zu trennen, außerhalb der Reihenfolge aufzurufen oder zurückzuziehen.</p>
+
+<h2>§ 4 Schriftliche, telefonische und Online-Gebote</h2>
+<p>Schriftliche Gebote (Vorgebote) müssen spätestens <span class="lg-ph">[24 Stunden – prüfen]</span> vor Beginn der Auktion beim Versteigerer eingehen. Sie werden nur so weit ausgeschöpft, wie es zum Überbieten anderer Gebote erforderlich ist.</p>
+<p>Telefonische Gebote sind nach vorheriger schriftlicher Anmeldung möglich, für Objekte ab einem Schätzpreis von <span class="lg-ph">[Betrag ergänzen]</span>. Für das Zustandekommen einer Verbindung wird keine Haftung übernommen.</p>
+<p>Für Live-Gebote über Online-Plattformen gelten ergänzend deren Nutzungsbedingungen. Ein zusätzliches Aufgeld der Plattform ist vom Bieter zu tragen. <span class="lg-ph">[Plattform und Gebühr ergänzen]</span></p>
+
+<h2>§ 5 Aufgeld und Steuern</h2>
+<p>Auf den Zuschlagspreis wird ein Aufgeld von <span class="lg-ph">[__ %]</span> erhoben, in dem die gesetzliche Umsatzsteuer enthalten ist (Differenzbesteuerung nach § 25a UStG). Für gekennzeichnete Objekte gilt die Regelbesteuerung: Aufgeld <span class="lg-ph">[__ %]</span> zuzüglich der gesetzlichen Umsatzsteuer auf Zuschlag und Aufgeld. <span class="lg-ph">[Regelung für Ausfuhr / innergemeinschaftliche Lieferung ergänzen]</span></p>
+
+<h2>§ 6 Zahlung</h2>
+<p>Der Kaufpreis (Zuschlag zuzüglich Aufgeld und ggf. Versandkosten) ist mit dem Zuschlag fällig. Zahlungen sind in Euro zu leisten, per Überweisung oder vor Ort <span class="lg-ph">[Zahlungsarten prüfen]</span>. Bei Zahlungsverzug werden Verzugszinsen in gesetzlicher Höhe berechnet. Der Versteigerer kann vom Vertrag zurücktreten oder Schadensersatz wegen Nichterfüllung verlangen und das Objekt erneut versteigern; der säumige Käufer haftet für einen Mindererlös.</p>
+
+<h2>§ 7 Eigentum, Abholung und Versand</h2>
+<p>Das Eigentum geht erst mit vollständiger Bezahlung auf den Käufer über. Mit dem Zuschlag geht die Gefahr auf den Käufer über. Ersteigerte Objekte sind innerhalb von <span class="lg-ph">[14 Tagen – prüfen]</span> nach der Auktion abzuholen. Versand erfolgt auf Wunsch, auf Kosten und Gefahr des Käufers. Für nicht abgeholte Objekte kann ein angemessenes Lagergeld berechnet werden.</p>
+
+<h2>§ 8 Haftung und Mängel</h2>
+<p>Der Versteigerer verpflichtet sich, bei begründeten Mängelrügen, die innerhalb von <span class="lg-ph">[12 Monaten – prüfen]</span> nach dem Zuschlag schriftlich geltend gemacht werden, seine Ansprüche gegenüber dem Einlieferer geltend zu machen bzw. den Käufer bei erfolgreicher Inanspruchnahme den Kaufpreis einschließlich Aufgeld zu erstatten. Weitergehende Ansprüche sind ausgeschlossen, soweit gesetzlich zulässig.</p>
+<p>Die Haftungsbeschränkung gilt nicht für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit des Versteigerers beruhen.</p>
+
+<h2>§ 9 Ausfuhr</h2>
+<p>Für die Einhaltung von Ein- und Ausfuhrbestimmungen ist der Käufer verantwortlich. Dies gilt insbesondere für Objekte, die artengeschützte Materialien enthalten.</p>
+
+<h2>§ 10 Datenschutz</h2>
+<p>Der Versteigerer verarbeitet die Daten der Bieter und Käufer zur Durchführung der Versteigerung. Einzelheiten finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+
+<h2>§ 11 Schlussbestimmungen</h2>
+<p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Erfüllungsort ist Göppingen. Gerichtsstand für Kaufleute, juristische Personen des öffentlichen Rechts und Personen ohne allgemeinen Gerichtsstand im Inland ist Göppingen.</p>
+<p>Sollte eine Bestimmung dieser Bedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Maßgeblich ist die deutsche Fassung.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="kontakt" style="background: #121212; color: #F4F2EE; padding: 96px clamp(16px, 3vw, 40px) 32px; box-sizing: border-box">
+    <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+        <form style="flex: 1.4 1 360px; display: flex; flex-direction: column; gap: 16px; max-width: 520px">
+          <h2 style="margin: 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em">Auktionstermine per <span style="white-space: nowrap">E-Mail.</span></h2>
+          <label for="hs-mail" style="font-size: 14px; color: #CFCBC2">Ihre E-Mail-Adresse</label>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            <input id="hs-mail" type="email" placeholder="name@beispiel.de" style="flex: 1 1 220px; min-height: 48px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; border: 1px solid #4A4842; background: #1E1D1B; color: #F4F2EE; font: inherit">
+            <button type="button" style="min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: #F4F2EE; color: #121212; font: inherit; font-weight: 600; cursor: pointer">Anmelden</button>
+          </div>
+        </form>
+        <div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Auktionen</span>
+          <a href="index.html#auktionen" style="color: #F4F2EE; text-decoration: none">Kommende Auktionen</a>
+          <a href="index.html#auktionen" style="color: #F4F2EE; text-decoration: none">Online-Kataloge</a>
+          <a href="index.html#zahlen" style="color: #F4F2EE; text-decoration: none">Ergebnisse</a>
+          <a href="index.html#bieten" style="color: #F4F2EE; text-decoration: none">So bieten Sie mit</a>
+        </div>
+        <div style="flex: 1 1 160px; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Verkaufen</span>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Online-Schätzung</a>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Nachlässe</a>
+          <a href="index.html#verkaufen" style="color: #F4F2EE; text-decoration: none">Sammlungen</a>
+          <a href="journal.html" style="color: #F4F2EE; text-decoration: none">Journal</a>
+        </div>
+        <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; line-height: 1.5">
+          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #ABA79E">Kontakt</span>
+          <span>Rosenplatz 11<br>73033 Göppingen</span>
+          <span>Tel. +49 7161 8083940<br>Fax +49 7161 21654<br>info@auktion-hohenstaufen.de</span>
+          <span style="color: #CFCBC2">Mo–Fr 10–17 Uhr</span>
+        </div>
+      </div>
+      <!-- Markenzeichen wie im Briefpapier: roter Balken + Wortmarke + rotes Quadrat -->
+      <div style="--h: clamp(40px, 6vw, 88px); display: flex; align-items: flex-end; gap: clamp(10px, 1.6vw, 22px)">
+        <span aria-hidden="true" style="flex: 1 1 auto; height: calc(var(--h) * 0.431); background: #C51415; border-radius: calc(var(--h) * 0.08)"></span>
+        <img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" style="flex: 0 0 auto; height: var(--h); width: auto; display: block">
+        <span aria-hidden="true" style="flex: 0 0 auto; width: calc(var(--h) * 0.39); height: calc(var(--h) * 0.431); background: #C51415; border-radius: calc(var(--h) * 0.08)"></span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; font-size: 13px; color: #ABA79E; border-top: 1px solid #2C2B28; padding-top: 24px">
+        <span>© 2026 Auktionshaus Hohenstaufen</span>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap">
+          <a href="impressum.html" style="color: #ABA79E; text-decoration: none">Impressum</a>
+          <a href="datenschutz.html" style="color: #ABA79E; text-decoration: none">Datenschutz</a>
+          <a href="versteigerungsbedingungen.html" aria-current="page" style="color: #F4F2EE; text-decoration: none">Versteigerungsbedingungen</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){var n=document.querySelector('.hs-nav'),b=n&&n.querySelector('.hs-menu-btn');if(!b)return;
+function set(o){n.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen')}
+b.addEventListener('click',function(){set(!n.classList.contains('is-open'))});
+n.querySelectorAll('.hs-links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+document.addEventListener('click',function(e){if(!n.contains(e.target))set(false)});})();
+</script>
+</body>
+</html>

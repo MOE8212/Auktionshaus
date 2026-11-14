@@ -8,24 +8,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;display=swap">
 <style>
-body{margin:0;background:#F4F2EE}
-a{color:#121212}a:hover{color:#B3261E}
-/* Navigation: weiße Pille, Logo in Originalfarben, roter Balken wie im Briefkopf */
-.hs-nav{--lh:30px;--padl:54px;--red:#C51415;position:relative;display:flex;align-items:center;gap:28px;background:#FFFFFF;color:#121212;border-radius:999px;padding:6px 6px 6px var(--padl);font-size:14px;box-sizing:border-box;box-shadow:0 1px 2px rgba(18,18,18,.06),0 10px 30px rgba(18,18,18,.10)}
+body{margin:0;background:#E8E4DC}
+a{color:#121212}a:hover{color:#C51415}
+/* Navigation: schwarze Pille, Wortmarke hell, roter Balken wie im Briefkopf */
+.hs-nav{--lh:30px;--padl:54px;--red:#C51415;--rr:calc(var(--lh) * .08);position:relative;display:flex;align-items:center;gap:28px;background:#121212;color:#F4F2EE;border-radius:999px;padding:6px 6px 6px var(--padl);font-size:14px;box-sizing:border-box;box-shadow:0 10px 30px rgba(18,18,18,.18)}
 .hs-nav-deco{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
-.hs-nav-deco::before{content:"";position:absolute;left:0;width:calc(var(--padl) - var(--lh) * .31);top:calc(50% - var(--lh) / 2 + var(--lh) * .5633);height:calc(var(--lh) * .4307);background:var(--red)}
+.hs-nav-deco::before{content:"";position:absolute;left:0;width:calc(var(--padl) - var(--lh) * .31);top:calc(50% - var(--lh) / 2 + var(--lh) * .5633);height:calc(var(--lh) * .4307);background:var(--red);border-radius:0 var(--rr) var(--rr) 0}
 .hs-brand{position:relative;display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
 .hs-logo{display:flex;align-items:flex-end}
 .hs-logo img{height:var(--lh);width:auto;display:block}
-.hs-sq{display:block;width:calc(var(--lh) * .39);height:calc(var(--lh) * .4307);margin-left:calc(var(--lh) * .43);background:var(--red)}
+.hs-sq{display:block;width:calc(var(--lh) * .39);height:calc(var(--lh) * .4307);margin-left:calc(var(--lh) * .43);background:var(--red);border-radius:var(--rr)}
 .hs-links{display:flex;gap:22px}
-.hs-links a{color:#4A463F;text-decoration:none}
-.hs-links a:hover,.hs-links a[aria-current="page"]{color:#121212}
+.hs-links a{color:#D9D6CF;text-decoration:none}
+.hs-links a:hover,.hs-links a[aria-current="page"]{color:#FFFFFF}
 .hs-links a[aria-current="page"]{font-weight:600}
-.hs-cta{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;background:#B3261E;color:#FFFFFF;border-radius:999px;padding:0 20px;text-decoration:none;font-weight:600;white-space:nowrap}
-.hs-cta:hover{color:#FFFFFF;background:#9A1F18}
-.hs-menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:0;background:#F0EDE7;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto}
-.hs-menu-btn span{display:block;width:16px;height:2px;border-radius:1px;background:#121212;transition:transform .2s}
+.hs-cta{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;background:#C51415;color:#FFFFFF;border-radius:999px;padding:0 20px;text-decoration:none;font-weight:600;white-space:nowrap}
+.hs-cta:hover{color:#FFFFFF;background:#A51011}
+.hs-menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:0;background:#2A2926;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto}
+.hs-menu-btn span{display:block;width:16px;height:2px;border-radius:1px;background:#F4F2EE;transition:transform .2s}
 .hs-nav.is-open .hs-menu-btn span:first-child{transform:translateY(3.5px) rotate(45deg)}
 .hs-nav.is-open .hs-menu-btn span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
 @media (max-width: 860px){
@@ -33,10 +33,10 @@ a{color:#121212}a:hover{color:#B3261E}
   .hs-brand{margin-right:auto}
   .hs-cta{padding:0 16px}
   .hs-menu-btn{display:inline-flex}
-  .hs-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:#FFFFFF;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(18,18,18,.16)}
+  .hs-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:0;background:#121212;border-radius:24px;padding:10px;box-shadow:0 16px 40px rgba(18,18,18,.28)}
   .hs-nav.is-open .hs-links{display:flex}
-  .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#121212}
-  .hs-links a+a{border-top:1px solid #EEEAE3}
+  .hs-links a{display:flex;align-items:center;min-height:52px;padding:0 16px;font-size:18px;color:#F4F2EE}
+  .hs-links a+a{border-top:1px solid #2C2B28}
 }
 @media (max-width: 389px){.hs-nav{--lh:22px;--padl:28px}.hs-cta{padding:0 12px;font-size:13px}}
 /* Statistik mobil: 2x2 */
@@ -71,26 +71,26 @@ a{color:#121212}a:hover{color:#B3261E}
 .j-wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3vw,40px);box-sizing:border-box}
 .j-back{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:14px;font-weight:600;text-decoration:none}
 .j-toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px 48px;margin-top:72px;border-top:1px solid #121212;padding-top:32px}
-.j-year h2{margin:0 0 12px;font-size:14px;letter-spacing:.14em;color:#B3261E;font-weight:600}
+.j-year h2{margin:0 0 12px;font-size:14px;letter-spacing:.14em;color:#C51415;font-weight:600}
 .j-year ul{list-style:none;margin:0;padding:0}
-.j-year li a{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid #E2DED6;text-decoration:none}
+.j-year li a{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid #CFCAC1;text-decoration:none}
 .j-toc-t{font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
 .j-toc-m{font-size:13px;color:#5E5A52}
 .j-list{background:#FFFFFF;margin-top:96px;padding:24px 0 120px}
 .j-art{max-width:720px;margin:0 auto;padding:96px clamp(16px,3vw,40px) 0;box-sizing:content-box;scroll-margin-top:80px}
 .j-art+.j-art{border-top:1px solid #E2DED6;margin-top:96px}
-.j-kicker{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#B3261E}
+.j-kicker{margin:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#C51415}
 .j-title{margin:18px 0 0;font-size:clamp(34px,4.4vw,56px);line-height:1.02;font-weight:700;letter-spacing:-.035em}
 .j-dek{margin:16px 0 0;font-size:22px;line-height:1.3;color:#5E5A52;font-weight:500}
 .j-by{margin:20px 0 0;font-size:14px;color:#4A463F}
-.j-lead{margin:28px 0 0;padding-top:24px;border-top:2px solid #B3261E;font-size:clamp(20px,1.8vw,23px);line-height:1.45;font-weight:500;letter-spacing:-.01em;color:#2B2925}
+.j-lead{margin:28px 0 0;padding-top:24px;border-top:2px solid #C51415;font-size:clamp(20px,1.8vw,23px);line-height:1.45;font-weight:500;letter-spacing:-.01em;color:#2B2925}
 .j-art p:not([class]){margin:22px 0 0;font-size:18px;line-height:1.7;color:#2B2925}
 .j-sub{margin:40px 0 0;font-size:22px;font-weight:600;letter-spacing:-.015em}
 .j-fig{margin:40px 0 0}
 .j-fig img{display:block;max-width:100%;height:auto;border-radius:12px;margin:0 auto}
 .j-fig-wide img{width:100%}
 .j-fig figcaption{margin-top:10px;font-size:14px;line-height:1.45;color:#5E5A52}
-.j-media{margin:32px 0 0;padding:18px 20px;background:#F4F2EE;border-radius:16px;display:flex;flex-direction:column;gap:12px;font-size:14px;font-weight:600}
+.j-media{margin:32px 0 0;padding:18px 20px;background:#E8E4DC;border-radius:16px;display:flex;flex-direction:column;gap:12px;font-size:14px;font-weight:600}
 .j-media audio{width:100%}
 .j-media video{width:100%;border-radius:10px;background:#000}
 .j-pages{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -102,11 +102,11 @@ a{color:#121212}a:hover{color:#B3261E}
 </style>
 </head>
 <body>
-<div style="background: #F4F2EE; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
+<div style="background: #E8E4DC; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
   <div style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
     <nav class="hs-nav" aria-label="Hauptnavigation">
       <span class="hs-nav-deco" aria-hidden="true"></span>
-      <a href="index.html" class="hs-brand"><span class="hs-logo"><img src="bilder/logo-farbe.svg" alt="Auktionshaus Hohenstaufen – zur Startseite" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
+      <a href="index.html" class="hs-brand"><span class="hs-logo"><img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen – zur Startseite" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
       <div class="hs-links" id="hs-links">
         <a href="index.html#auktionen">Auktionen</a>
         <a href="index.html#verkaufen">Einliefern</a>
@@ -122,9 +122,9 @@ a{color:#121212}a:hover{color:#B3261E}
   <header class="j-wrap" id="uebersicht" style="padding-top: clamp(40px, 5vw, 64px)">
     <a class="j-back" href="index.html">← Zur Startseite</a>
     <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 18px">
-      <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B3261E">Journal</span>
+      <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #C51415">Journal</span>
       <h1 style="margin: 0; font-weight: 700; font-size: clamp(36px, 10vw, max(52px, 7vw)); line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase">Aus dem<br>Auktionshaus</h1>
-      <p style="margin: 8px 0 0; font-size: clamp(22px, 2.4vw, 32px); color: #B3261E">Presseberichte, Rekorde &amp; Geschichten 2013–2019</p>
+      <p style="margin: 8px 0 0; font-size: clamp(22px, 2.4vw, 32px); color: #C51415">Presseberichte, Rekorde &amp; Geschichten 2013–2019</p>
     </div>
     <nav class="j-toc" aria-label="Beiträge nach Jahr">
       <div class="j-year"><h2>2019</h2><ul><li><a href="#brunsvik-2019"><span class="j-toc-t">Im Angebot: Das größte von Märklin jemals erbaute Schiff</span><span class="j-toc-m">Pressemitteilung · Februar 2019</span></a></li></ul></div><div class="j-year"><h2>2018</h2><ul><li><a href="#stz-2018-01-23"><span class="j-toc-t">Seltenes und heiß begehrtes Blechspielzeug</span><span class="j-toc-m">Stuttgarter Zeitung · 23. Januar 2018</span></a></li><li><a href="#nwz-2018-01-19"><span class="j-toc-t">Auktion mit Märklin-Raritäten</span><span class="j-toc-m">NWZ Göppingen · 19. Januar 2018</span></a></li></ul></div><div class="j-year"><h2>2016</h2><ul><li><a href="#rekord-2016"><span class="j-toc-t">Rekord: 440.000 Euro für ein Märklin-Produkt</span><span class="j-toc-m">Pressebericht · Februar 2016</span></a></li><li><a href="#stz-2016-01-21"><span class="j-toc-t">Eine komplette Fabrik unterm Hammer</span><span class="j-toc-m">Stuttgarter Zeitung · 21. Januar 2016</span></a></li><li><a href="#fabrik-2016"><span class="j-toc-t">Glanzpunkt ist eine große Märklin-Fabrik</span><span class="j-toc-m">Pressebericht · Januar 2016</span></a></li></ul></div><div class="j-year"><h2>2015</h2><ul><li><a href="#atw-2015"><span class="j-toc-t">February 2015 Auction Preview</span><span class="j-toc-m">Antique Toy World (USA) · Februar 2015</span></a></li><li><a href="#faz-2015-01-19"><span class="j-toc-t">Rififi in Göppingen</span><span class="j-toc-m">Frankfurter Allgemeine Zeitung · 19. Januar 2015</span></a></li><li><a href="#stz-2015-01-03"><span class="j-toc-t">Märklin-Dampfer unterm Hammer – Odyssee in die Unterwelt</span><span class="j-toc-m">Stuttgarter Zeitung · 3. Januar 2015</span></a></li></ul></div><div class="j-year"><h2>2014</h2><ul><li><a href="#stz-2014-08-23"><span class="j-toc-t">Gebote aus dem In- und Ausland bei der Sommerauktion</span><span class="j-toc-m">Stuttgarter Zeitung · 23. August 2014</span></a></li><li><a href="#nwz-2014-08-23"><span class="j-toc-t">Zweitägige Sommerauktion gut besucht</span><span class="j-toc-m">NWZ Göppingen · 23. August 2014</span></a></li><li><a href="#stz-2014-08-12"><span class="j-toc-t">Der Stuttgarter Hauptbahnhof in Blech</span><span class="j-toc-m">Stuttgarter Zeitung · 12. August 2014</span></a></li><li><a href="#stz-2014-01-28"><span class="j-toc-t">86 000 Euro für erstes Märklin-Schiff</span><span class="j-toc-m">Stuttgarter Zeitung · 28. Januar 2014</span></a></li><li><a href="#nwz-2014-01-27"><span class="j-toc-t">Spielzeug: „Resolution“ geht für 86.000 Euro weg</span><span class="j-toc-m">NWZ Göppingen · 27. Januar 2014</span></a></li></ul></div><div class="j-year"><h2>2013</h2><ul><li><a href="#stz-2013-12-30"><span class="j-toc-t">Jede Menge Märklin unterm Hammer</span><span class="j-toc-m">Stuttgarter Zeitung · 30. Dezember 2013</span></a></li><li><a href="#bild-2013-12-20"><span class="j-toc-t">Märklin-Kutsche unterm Hammer</span><span class="j-toc-m">Bild Stuttgart · 20. Dezember 2013</span></a></li><li><a href="#pm-2013-12-17"><span class="j-toc-t">Eugen Märklins Kutsche von 1895 wird versteigert</span><span class="j-toc-m">Auktionshaus Hohenstaufen · 17. Dezember 2013</span></a></li></ul></div>
@@ -361,7 +361,7 @@ a{color:#121212}a:hover{color:#B3261E}
     <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
       <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
         <form style="flex: 1.4 1 360px; display: flex; flex-direction: column; gap: 16px; max-width: 520px">
-          <h2 style="margin: 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em">Auktionstermine per E-Mail.</h2>
+          <h2 style="margin: 0; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; font-weight: 600; letter-spacing: -0.03em">Auktionstermine per <span style="white-space: nowrap">E-Mail.</span></h2>
           <label for="hs-mail" style="font-size: 14px; color: #CFCBC2">Ihre E-Mail-Adresse</label>
           <div style="display: flex; gap: 8px; flex-wrap: wrap">
             <input id="hs-mail" type="email" placeholder="name@beispiel.de" style="flex: 1 1 220px; min-height: 48px; box-sizing: border-box; padding: 0 18px; border-radius: 999px; border: 1px solid #4A4842; background: #1E1D1B; color: #F4F2EE; font: inherit">
@@ -391,16 +391,16 @@ a{color:#121212}a:hover{color:#B3261E}
       </div>
       <!-- Markenzeichen wie im Briefpapier: roter Balken + Wortmarke + rotes Quadrat -->
       <div style="--h: clamp(40px, 6vw, 88px); display: flex; align-items: flex-end; gap: clamp(10px, 1.6vw, 22px)">
-        <span aria-hidden="true" style="flex: 1 1 auto; height: calc(var(--h) * 0.431); background: #C51415"></span>
+        <span aria-hidden="true" style="flex: 1 1 auto; height: calc(var(--h) * 0.431); background: #C51415; border-radius: calc(var(--h) * 0.08)"></span>
         <img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" style="flex: 0 0 auto; height: var(--h); width: auto; display: block">
-        <span aria-hidden="true" style="flex: 0 0 auto; width: calc(var(--h) * 0.39); height: calc(var(--h) * 0.431); background: #C51415"></span>
+        <span aria-hidden="true" style="flex: 0 0 auto; width: calc(var(--h) * 0.39); height: calc(var(--h) * 0.431); background: #C51415; border-radius: calc(var(--h) * 0.08)"></span>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; font-size: 13px; color: #ABA79E; border-top: 1px solid #2C2B28; padding-top: 24px">
         <span>© 2026 Auktionshaus Hohenstaufen</span>
         <div style="display: flex; gap: 24px; flex-wrap: wrap">
-          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Impressum</a>
-          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Datenschutz</a>
-          <a href="index.html#kontakt" style="color: #ABA79E; text-decoration: none">Versteigerungsbedingungen</a>
+          <a href="impressum.html" style="color: #ABA79E; text-decoration: none">Impressum</a>
+          <a href="datenschutz.html" style="color: #ABA79E; text-decoration: none">Datenschutz</a>
+          <a href="versteigerungsbedingungen.html" style="color: #ABA79E; text-decoration: none">Versteigerungsbedingungen</a>
         </div>
       </div>
     </div>

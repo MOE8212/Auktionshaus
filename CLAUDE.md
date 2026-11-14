@@ -13,6 +13,7 @@ Betreut von Michael Eckert. Ziel aktuell: erste Version mit dem Kunden abstimmen
 
 - `index.html` – Startseite, eine Datei, reines HTML mit Inline-Styles, keine Build-Tools
 - `journal.html` – Journalseite mit allen Presseberichten der alten Website (2013–2019), gleiche Navigation/Footer wie die Startseite (CSS-Block aus `index.html` übernommen – bei Änderungen an Navigation/Footer beide Seiten anpassen)
+- `impressum.html`, `datenschutz.html`, `versteigerungsbedingungen.html` – Rechtsseiten als **Entwürfe** (gleiche Navigation/Footer, aus `journal.html` abgeleitet); offene Angaben rot markiert (`.lg-ph`): HRB, USt-IdNr, §34b-Behörde, Aufgeld, Fristen usw. Versteigerungsbedingungen = Mustertext, durch gültige Fassung des Kunden ersetzen. Alte Website war wegen abgelaufenem Zertifikat nicht abrufbar.
 - `medien/` – Audio/Video/PDF aus der alten Presseseite (SWR-Beiträge, Zarenzug-PDF)
 - `bilder/` – aufbereitete Bilder (siehe unten)
 - `<meta name="robots" content="noindex">` bleibt drin, solange es ein Entwurf ist
@@ -26,14 +27,14 @@ Stil-Vorbilder (vom Kunden/Michael ausgewählt):
 
 Festgelegt:
 - **Nur eine Schrift:** Inter Tight (Google Fonts), Gewichte 400–800. Keine zweite Schrift (Michael wollte ausdrücklich eine einheitliche Schrift).
-- Farben: Off-White `#F4F2EE` (Grund), Schwarz `#121212`, Akzentrot `#B3261E` (nah am Rot der Kunden-Anzeigen), Grautöne `#5E5A52` / `#8A867D`.
+- Farben: Seitengrund `#E8E4DC` (dunkler als Weiß-Karten für mehr Kontrast; Kachel „Für Verkäufer“ `#D9D3C7`), Off-White `#F4F2EE` nur noch als helle Schrift/Buttons auf Schwarz, Schwarz `#121212`, Akzentrot = Logorot `#C51415` (Hover `#A51011`), Grautöne `#5E5A52` / `#8A867D`.
 - Radius: Karten 24 px, Bilder 12–20 px, Buttons Pille (999 px). Touch-Ziele ≥ 44 px.
-- Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). **Logofarben bleiben erhalten** (Kundenwunsch): `bilder/logo-farbe.svg` (#181716 / Grau #6E6E6D) in der Navigation, Rot des Logos #C51415. Navigation daher als **weiße Pille**; der rote Balken des Briefkopfs läuft aus der linken Rundung der Pille zum Logo (CSS `.hs-nav-deco`), rechts das rote Quadrat (`.hs-sq`) – Proportionen aus dem Original abgeleitet. Footer (dunkel): `bilder/logo-hell.svg` zweifarbig (#F4F2EE / #B4B2AE) mit rotem Balken + Quadrat. `bilder/logo-dunkel.svg` Reserve, `bilder/loewe.png` ungenutzt.
+- Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). **Logofarben bleiben erhalten** (Kundenwunsch): `bilder/logo-farbe.svg` (#181716 / Grau #6E6E6D) in der Navigation, Rot des Logos #C51415. Navigation als **schwarze Pille** (Kundenwunsch, weiße Variante verworfen) mit `bilder/logo-hell.svg`; der rote Balken des Briefkopfs läuft aus der linken Rundung der Pille zum Logo (CSS `.hs-nav-deco`), rechts das rote Quadrat (`.hs-sq`) – Proportionen aus dem Original abgeleitet. Balken und Quadrate (Navigation + Footer) mit leicht abgerundeten Ecken (8 % der Logohöhe). Footer (dunkel): `bilder/logo-hell.svg` zweifarbig (#F4F2EE / #B4B2AE) mit rotem Balken + Quadrat. `bilder/logo-farbe.svg` / `bilder/logo-dunkel.svg` Reserve, `bilder/loewe.png` ungenutzt.
 - Bilder: farbig, „glossy“ – Objekt freigestellt auf farbigem Studio-Verlauf mit Lichtkegel, Spiegelboden und Schatten.
 
 Mobil (≤ 700 px): Statistik als 2×2-Raster mit kleineren Zahlen; Desktop unverändert.
 
-Seitenreihenfolge: Navigation (Logo) → Einleitungszeile → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband, läuft links→rechts, Hover vergrößert, pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
+Seitenreihenfolge: Navigation (Logo) → Einleitungszeile → Hero-Bildkarte (nächste Auktion) → Statement + Marken-Laufband → Statistik → „Bereits versteigert“ (Bild-Laufband per JS, läuft links→rechts, mit Maus/Finger ziehbar inkl. Schwung, Hover vergrößert und pausiert) → „Jetzt im Auktionssaal“ → Kaufen/Verkaufen-Kacheln → Journal (Hauptbeitrag Bild links/Text rechts + 3 Karten) → Footer.
 
 ## Inhalte: echt vs. erfunden
 
