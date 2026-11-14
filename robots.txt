@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moe8212.github.io/Auktionshaus/sitemap.xml

@@ -26,7 +26,7 @@ Stil-Vorbilder (vom Kunden/Michael ausgewählt):
 - **The Art Newspaper – London Gallery Weekend 2021**: Journal-/Beitragsdarstellung (rote Rubrik-Labels, große Überschriften, redaktionelles Layout).
 
 Festgelegt:
-- **Nur eine Schrift:** Inter Tight (Google Fonts), Gewichte 400–800. Keine zweite Schrift (Michael wollte ausdrücklich eine einheitliche Schrift).
+- **Nur eine Schrift:** Inter Tight, **lokal eingebunden** (`fonts/`, variable Schrift, Latin + Latin-Ext, SIL OFL; keine Verbindung zu Google), Gewichte 400–800. Keine zweite Schrift (Michael wollte ausdrücklich eine einheitliche Schrift).
 - Farben: Seitengrund `#E8E4DC` (dunkler als Weiß-Karten für mehr Kontrast; Kachel „Für Verkäufer“ `#D9D3C7`), Off-White `#F4F2EE` nur noch als helle Schrift/Buttons auf Schwarz, Schwarz `#121212`, Akzentrot = Logorot `#C51415` (Hover `#A51011`), Grautöne `#5E5A52` / `#8A867D`.
 - Radius: Karten 24 px, Bilder 12–20 px, Buttons Pille (999 px). Touch-Ziele ≥ 44 px.
 - Logo: offizielle Wortmarke „AUKTIONSHAUS HOHENSTAUFEN“ mit Staufer-Löwe aus der Kundenvorlage `bilder/Logo A4 breit Word Vorlage 166x23.svg` (Original nicht im Repo). **Logofarben bleiben erhalten** (Kundenwunsch): `bilder/logo-farbe.svg` (#181716 / Grau #6E6E6D) in der Navigation, Rot des Logos #C51415. Navigation als **schwarze Pille** (Kundenwunsch, weiße Variante verworfen) mit `bilder/logo-hell.svg`; der rote Balken des Briefkopfs läuft aus der linken Rundung der Pille zum Logo (CSS `.hs-nav-deco`), rechts das rote Quadrat (`.hs-sq`) – Proportionen aus dem Original abgeleitet. Balken und Quadrate (Navigation + Footer) mit leicht abgerundeten Ecken (8 % der Logohöhe). Footer (dunkel): `bilder/logo-hell.svg` zweifarbig (#F4F2EE / #B4B2AE) mit rotem Balken + Quadrat. `bilder/logo-farbe.svg` / `bilder/logo-dunkel.svg` Reserve, `bilder/loewe.png` ungenutzt.
@@ -74,6 +74,14 @@ Regeln:
 - Objekte mit NS-Symbolen (z. B. Junkers-Flugzeuge, Zeppelin in den Anzeigen) nicht verwenden.
 - Final: echte Freisteller-Fotos vom Kunden/Studio, Hintergrund z. B. mit Adobe Firefly „Hintergrund generieren“.
 
+## SEO
+
+Umgesetzt (alle Seiten): eigener `<title>` und `meta description` (≤ 160 Zeichen), `canonical`, Open Graph/Twitter-Karte (`bilder/og-image.jpg`, 1200×630), Favicon-Satz (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192/512.png`, Staufer-Löwe auf Logorot), `site.webmanifest`, `theme-color`, JSON-LD (Startseite: `LocalBusiness` + `WebSite`; Unterseiten: `WebPage` + `BreadcrumbList`), `width`/`height` an allen Bildern, Hero responsiv (`hero_glossy-960/1440/2000.jpg`, `fetchpriority="high"`), Brunsvik-Bild als `-1200`-Variante, Schrift-Preload. Dazu `sitemap.xml`, `robots.txt`, `404.html` (absolute Links).
+
+- **Basis-URL** steht derzeit auf `https://moe8212.github.io/Auktionshaus/` in allen `<head>`-Blöcken, im JSON-LD, in `sitemap.xml`, `robots.txt` und `404.html`. Bei eigener Domain überall ersetzen.
+- Strukturierte Daten nur mit echten Angaben: keine Öffnungszeiten und kein Auktions-`Event`, solange die Werte erfunden sind. Mit echten Terminen ein `Event` (bzw. `SaleEvent`) für die nächste Auktion ergänzen.
+- Neue Seiten: Kopfbereich nach demselben Muster anlegen und in `sitemap.xml` eintragen.
+
 ## Offene Punkte
 
 - [ ] Kunden-Feedback zur ersten Version einholen
@@ -85,7 +93,8 @@ Regeln:
 - [ ] Online-Bieten: Anbindung prüfen (Kunde nutzt bereits lot-tissimo / the-saleroom)
 - [ ] Abdruckrechte für die Presse-Volltexte und -Fotos im Journal klären (StZ, FAZ, NWZ, Bild, Fotografen) – auf der alten Seite standen sie schon, beim Relaunch neu bestätigen lassen
 - [ ] Newsletter-Formular anbinden oder entfernen
-- [ ] Vor Livegang: `noindex` entfernen, Impressum/Datenschutz, eigene Domain
+- [ ] Vor Livegang: `noindex` auf allen Seiten außer `404.html` entfernen, Impressum/Datenschutz, eigene Domain (Basis-URL tauschen, siehe SEO)
+- [ ] Nach Livegang: Google Search Console einrichten und Sitemap einreichen, Google-Unternehmensprofil (Maps) mit gleicher Adresse und Telefonnummer pflegen, 301-Weiterleitungen von den alten URLs (z. B. `pressemitteilungen.html` → `journal.html`) einrichten
 
 ## Arbeitsweise
 

@@ -1,0 +1,13 @@
+{
+  "name": "Auktionshaus Hohenstaufen",
+  "short_name": "Hohenstaufen",
+  "lang": "de",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#E8E4DC",
+  "theme_color": "#121212",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
