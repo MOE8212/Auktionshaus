@@ -66,7 +66,7 @@ Alle Bilder in `bilder/` sind **Montagen/Platzhalter**, kein echtes Studio-Shoot
 - Hintergründe per Code generiert (Verlauf + Spot + Spiegelboden)
 
 - `bilder/versteigert/los_XXXX.jpg`: echte Produktfotos der alten Website (`img_XXXX-large.jpg`, 1620×1080 bzw. 900×600), nur zugeschnitten (3:2, 840×560), Weißpunkt angehoben, leicht geschärft – keine KI. Bildunterschriften sind allgemeine Beschreibungen (Hersteller/Zuschlag unbekannt).
-- `bilder/marken/`: Märklin-Logo (Wikimedia „Logo Märklin.svg“) und Bing-Werke-Zeichen 1924 (Wikimedia), schwarz `#121212` eingefärbt.
+- `bilder/marken/`: Märklin-Logo (Wikimedia „Logo Märklin.svg“) und Bing-Werke-Zeichen 1924 (Wikimedia), schwarz `#121212` eingefärbt. Für Carette, Lehmann, Plank, Schoenner, Doll, Bub, Distler und Krauss gibt es keine frei nutzbaren Logos (Recherche 14.11.2026: Wikimedia Commons, Wikipedia, Websuche; nur Sammlerseiten mit Fotos Dritter). Sie haben deshalb **eigene Signets** im Stil historischer Herstellermarken: gefüllte Form (Kreis, Oval, Schild, Raute) mit ausgespartem Monogramm (GC, EPL, EP, JS, D&C, KBN, JD, K) und daneben den Namen, wie beim Bing-Zeichen. Sie stehen inline als SVG im Laufband und zusätzlich als `bilder/marken/signet-*.svg`. Es sind **keine Original-Warenzeichen**.
 
 - `bilder/presse/`: Fotos von der alten Presseseite (meist 400–1000 px), Kacheln der Startseite als 3:2-Zuschnitt `karte-*.jpg` (780×520). Fotonachweise wie im Original übernommen (u. a. Horst Rudel, Veranstalter, privat, Auktionshaus Hohenstaufen). `karussell_glossy`, `taxi_glossy`, `waerterhaus_glossy` derzeit ungenutzt.
 
@@ -88,7 +88,7 @@ Umgesetzt (alle Seiten): eigener `<title>` und `meta description` (≤ 160 Zeich
 - [ ] Kunden-Feedback zur ersten Version einholen
 - [ ] Beispielwerte (siehe oben) durch echte Zahlen/Termine ersetzen
 - [ ] Bessere Bilder: Einzelfotos von der alten Website oder Studio-Fotos; Karussell 8846, Straßenbahn, Lok noch ungenutzt (Preisschilder liegen auf dem Objekt)
-- [ ] Marken-Laufband: Märklin und Bing als Logo (schwarz); Carette, Lehmann, Plank, Schoenner, Doll, Bub, Distler, Krauss noch als schwarzer Text – für diese gibt es keine frei verfügbaren Logodateien. Logos vom Kunden besorgen (Nutzung mit Markeninhabern klären, v. a. Märklin), dann als SVG in `bilder/marken/`, schwarz.
+- [ ] Marken-Laufband: Die eigenen Signets bei Gelegenheit durch die echten historischen Marken ersetzen, wenn der Kunde Vorlagen hat (z. B. Fotos von Originalkartons). Märklin-Logo: Nutzung mit dem Markeninhaber klären.
 - [ ] „Bereits versteigert“: mit Kunden klären, ob die Objekte der alten Website versteigert wurden; echte Bezeichnungen (Hersteller, Katalognr.) und ggf. Zuschläge eintragen
 - [ ] Unterseiten: Auktionen/Katalog, Einliefern, Ergebnisse, Journal, Kontakt, Impressum, Datenschutz, Versteigerungsbedingungen
 - [ ] Online-Bieten: Anbindung prüfen (Kunde nutzt bereits lot-tissimo / the-saleroom)
