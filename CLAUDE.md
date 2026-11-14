@@ -91,4 +91,5 @@ Regeln:
 
 - Michael arbeitet knapp und lösungsorientiert, iteriert schnell anhand von Screenshots.
 - Antworten auf Deutsch, strukturiert, ohne Füllstoff.
-- Commits auf `main`; GitHub Pages aktualisiert sich automatisch.
+- **Nach jeder Aktion automatisch committen und pushen** (ohne Nachfrage): Commit auf `main` mit aussagekräftiger deutscher Nachricht (Betreff + Stichpunkte, was geändert wurde), danach `git push origin main`. GitHub Pages aktualisiert sich automatisch.
+- Maßgeblich ist immer der **lokale Ordner**: Das Repo soll genau den lokalen Stand abbilden (`git add -A`). Ausgenommen sind nur die Einträge in `.gitignore`: `Pictues/`, die Original-Logovorlage und `*.crdownload`.
