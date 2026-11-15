@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Entwurf C · Briefkopf im Hero – Auktionshaus Hohenstaufen</title>
+<title>Entwurf C · Schwarzes Menüband – Auktionshaus Hohenstaufen</title>
 <meta name="description" content="Märklin-Auktionen in Göppingen: historisches Blechspielzeug, alte Eisenbahnen und Dampfmaschinen. Rund 1.000 Lose pro Auktion – jetzt mitbieten oder einliefern.">
 <link rel="canonical" href="https://moe8212.github.io/Auktionshaus/">
 <meta name="theme-color" content="#121212">
@@ -169,37 +169,26 @@ a{color:#121212}a:hover{color:#C51415}
 .hs-lot:hover{transform:scale(1.08);z-index:2;box-shadow:0 20px 44px rgba(18,18,18,.16)}
 @media (prefers-reduced-motion: reduce){.hs-track,.hs-lots{animation:none}.hs-lots-wrap:not(.is-js){overflow-x:auto}.hs-lot{transition:none}}
 
-/* ===== ENTWURF: Briefkopf komplett (Balken – Wortmarke mit Löwe – Quadrat, Pixelraster oben links) ===== */
-.lk{--red:#C51415;--rr:calc(var(--lh) * .08);position:relative;display:flex;align-items:flex-end}
-.lk-bar{flex:1 1 auto;min-width:calc(var(--lh) * .8);height:calc(var(--lh) * .4307);margin:0 calc(var(--lh) * .29) calc(var(--lh) * .006) 0;background:var(--red);border-radius:0 var(--rr) var(--rr) 0}
-img.lk-logo{flex:0 0 auto;height:var(--lh);width:auto;max-width:none;display:block}
-.lk-sq{flex:0 0 auto;width:calc(var(--lh) * .39);height:calc(var(--lh) * .4307);margin-left:calc(var(--lh) * .40);background:var(--red);border-radius:var(--rr) 0 0 var(--rr)}
-.lk-grid{position:absolute;top:0;left:0;width:calc(var(--glh) * 1.44);height:auto;display:block;color:#FFFFFF;pointer-events:none}
-/* Navigation: Logo erst nach dem Scrollen in der Pille */
-.hs-navwrap{position:fixed!important;left:0;right:0}
+/* ===== ENTWURF: Briefkopf 1:1 (bilder/briefkopf.svg = unveränderte Kundenvorlage) + Menüband ===== */
+img.bk{display:block;width:100%;height:auto;max-width:none}
+.hs-nav{--rr:0px}
 .hs-nav.no-logo{--padl:28px}
 .hs-nav.no-logo .hs-brand,.hs-nav.no-logo .hs-nav-deco{display:none}
-@media (max-width: 860px){
-  .hs-nav.no-logo{--padl:6px;width:auto;margin-left:auto}
-  .hs-nav.no-logo .hs-links{left:auto;width:min(320px,calc(100vw - 32px))}
-}
-.hs-nav .hs-brand{animation:lk-in .35s ease}
-@keyframes lk-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.lk-badge{position:fixed;left:16px;bottom:16px;z-index:50;background:#121212;color:#F4F2EE;font:600 12px/1 'Inter Tight',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.hs-nav .hs-brand{animation:bk-in .3s ease}
+@keyframes bk-in{from{opacity:0}to{opacity:1}}
+.navwrap{position:sticky;top:0;z-index:20}
+.lk-badge{position:fixed;left:16px;bottom:16px;z-index:50;background:#C51415;color:#FFFFFF;font:600 12px/1 'Inter Tight',system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 
-.hs-hero{justify-content:flex-end}
-.hs-hero{--strip:clamp(88px,8.4vw,128px);background:#0B1D4D;min-height:calc(clamp(560px,56vw,820px) + var(--strip))}
-.hs-hero-img{top:var(--strip);height:calc(100% - var(--strip));-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px);mask-image:linear-gradient(to bottom,transparent 0,#000 90px)}
-.lk-hero{position:absolute;z-index:2;left:0;right:0;top:clamp(24px,2.6vw,38px);--lh:clamp(34px,4.4vw,64px)}
-.lk-hero-grid{--glh:clamp(40px,6vw,90px)}
-.lk-hero-grid .lk-grid{opacity:.5;z-index:2}
-.hs-hero-meta{margin-top:20px}
-@media (max-width: 700px){
-  .hs-hero{background:#03081B}
-  .hs-hero-img{top:auto;height:auto;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px);mask-image:linear-gradient(to bottom,transparent 0,#000 90px)}
-  .lk-hero{position:relative;top:auto;order:-1;margin:28px 0 4px;--lh:38px}
-  .hs-hero-meta{margin-top:0}
+.hs-nav.hs-nav-band{border-radius:0;box-shadow:none;background:transparent;width:100%;max-width:1440px;margin:0 auto;padding:8px clamp(16px,3vw,40px);gap:28px}
+.hs-nav-band .hs-nav-deco{display:none}
+.hs-nav-band .hs-cta{margin-left:auto}
+.hs-nav-band .hs-brand+.hs-links{margin-left:8px}
+@media (max-width: 860px){
+  .hs-nav.hs-nav-band{max-width:none;gap:8px;padding:6px 16px}
+  .hs-nav-band .hs-links{left:16px;right:16px}
 }
+
+.navwrap-c{background:#121212}
 </style>
 
 </head>
@@ -207,9 +196,10 @@ img.lk-logo{flex:0 0 auto;height:var(--lh);width:auto;max-width:none;display:blo
 
 <div style="background: #E8E4DC; color: #121212; font-family: 'Inter Tight', system-ui, sans-serif; min-height: 100vh">
 
-  <!-- Navigation: schwebende Pille (mobil: eine Zeile + Menü) -->
-  <div class="hs-navwrap" style="position: sticky; top: 0; z-index: 20; display: flex; justify-content: center; padding: 16px 16px 0">
-    <nav class="hs-nav no-logo" aria-label="Hauptnavigation">
+  <!-- ENTWURF C: Briefkopf, darunter schwarzes Menüband (bleibt beim Scrollen oben) -->
+  <img class="bk bk-c" data-bk src="bilder/briefkopf.svg" alt="Auktionshaus Hohenstaufen – Briefkopf mit Staufer-Löwe" width="1411" height="196" fetchpriority="high">
+  <div class="navwrap navwrap-c">
+    <nav class="hs-nav hs-nav-band no-logo" aria-label="Hauptnavigation">
       <span class="hs-nav-deco" aria-hidden="true"></span>
       <a href="#top" class="hs-brand"><span class="hs-logo"><img src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
       <div class="hs-links" id="hs-links">
@@ -226,7 +216,7 @@ img.lk-logo{flex:0 0 auto;height:var(--lh);width:auto;max-width:none;display:blo
   </div>
 
   <!-- Hero: Wortmarke (ViV) + Bildkarte (Vantra) -->
-  <header id="top" style="position: relative; max-width: 1440px; margin: 0 auto; padding: clamp(96px, 9vw, 120px) clamp(16px, 3vw, 40px) 0; box-sizing: border-box">
+  <header id="top" style="position: relative; max-width: 1440px; margin: 0 auto; padding: clamp(28px, 4vw, 48px) clamp(16px, 3vw, 40px) 0; box-sizing: border-box">
     <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap">
       <p style="margin: 0; font-size: 20px; line-height: 1.25; font-weight: 500">Historisches Blechspielzeug,<br>Eisenbahnen &amp; Dampfmaschinen.</p>
       <p style="margin: 0; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600">Seit 2013 · Göppingen</p>
@@ -236,14 +226,12 @@ img.lk-logo{flex:0 0 auto;height:var(--lh);width:auto;max-width:none;display:blo
 
   <section style="max-width: 1440px; margin: 28px auto 0; padding: 0 clamp(16px, 3vw, 40px); box-sizing: border-box">
     <div class="hs-hero">
-      <span class="lk-hero-grid" aria-hidden="true"><svg class="lk-grid" viewBox="0 0 42.3 28" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-miterlimit="22.926"><rect x="35.207" y="-.167" width="7.029" height="7.029" stroke-width=".07"/><rect x=".063" y="-.157" width="7.029" height="7.029" stroke-width="2.762"/><rect x="7.092" y="-.157" width="7.029" height="7.029" stroke-width="1.289"/><rect x="14.121" y="-.157" width="7.029" height="7.029" stroke-width=".644"/><rect x="21.149" y="-.157" width="7.029" height="7.029" stroke-width=".322"/><rect x="28.178" y="-.156" width="7.029" height="7.029" stroke-width=".166"/><rect x="28.178" y="6.861" width="7.029" height="7.029" stroke-width=".07"/><rect x=".063" y="6.873" width="7.029" height="7.029" stroke-width="1.289"/><rect x="7.092" y="6.873" width="7.029" height="7.029" stroke-width=".644"/><rect x="14.121" y="6.873" width="7.029" height="7.029" stroke-width=".322"/><rect x="21.149" y="6.873" width="7.029" height="7.029" stroke-width=".166"/><rect x=".063" y="13.89" width="7.029" height="7.029" stroke-width=".644"/><rect x="7.092" y="13.89" width="7.029" height="7.029" stroke-width=".322"/><rect x="14.121" y="13.89" width="7.029" height="7.029" stroke-width=".166"/><rect x="21.149" y="13.89" width="7.029" height="7.029" stroke-width=".07"/><rect x=".063" y="20.936" width="7.029" height="7.029" stroke-width=".322"/><rect x="7.092" y="20.936" width="7.029" height="7.029" stroke-width=".166"/><rect x="14.121" y="20.936" width="7.029" height="7.029" stroke-width=".07"/></g></svg></span>
       <img width="2880" height="1800" class="hs-hero-img" src="bilder/hero_glossy-1440.jpg" srcset="bilder/hero_glossy-960.jpg 960w, bilder/hero_glossy-1440.jpg 1440w, bilder/hero_glossy-2000.jpg 2000w, bilder/hero_glossy.jpg 2880w" sizes="(min-width: 1440px) 1360px, calc(100vw - 32px)" fetchpriority="high" decoding="async" alt="Märklin-Raddampfer „Rheingold“ in Weiß und Rot auf glänzend blauem Studiohintergrund mit Spiegelung">
-      <div class="lk lk-hero" data-lk><span class="lk-bar" aria-hidden="true"></span><img class="lk-logo" src="bilder/logo-hell.svg" alt="Auktionshaus Hohenstaufen" width="134" height="29"><span class="lk-sq" aria-hidden="true"></span></div>
-      <h2 class="hs-hero-h">Sammeln.<br>Bieten.<br>Bewahren.</h2>
       <div class="hs-hero-meta">
         <span>Märklin 5065 · „Rheingold“-Raddampfer · 45&nbsp;cm</span>
         <span style="color: #D6E2F5">Zuschlag 17.01.2026 · €&nbsp;28.000</span>
       </div>
+      <h2 class="hs-hero-h">Sammeln.<br>Bieten.<br>Bewahren.</h2>
     </div>
 
     <!-- Nächste Auktion: eigene Leiste unter dem Bild -->
@@ -508,11 +496,11 @@ w.addEventListener('dragstart',function(e){e.preventDefault()});
 window.addEventListener('resize',measure);window.addEventListener('load',measure);
 measure();draw();requestAnimationFrame(tick)})();
 </script>
-<div class="lk-badge">Entwurf C · Briefkopf im Hero</div>
+<div class="lk-badge">Entwurf C · Schwarzes Menüband</div>
 <script>
-/* ENTWURF: kleines Logo in der Navigation erst, wenn der Briefkopf aus dem Bild ist */
-(function(){var n=document.querySelector('.hs-nav'),k=document.querySelector('[data-lk]');if(!n||!k||!window.IntersectionObserver)return;
-new IntersectionObserver(function(e){n.classList.toggle('no-logo',e[0].isIntersecting)},{rootMargin:'-80px 0px 0px 0px'}).observe(k);})();
+/* ENTWURF: kleines Logo im Menüband erst, wenn der Briefkopf aus dem Bild gescrollt ist */
+(function(){var n=document.querySelector('.hs-nav'),k=document.querySelector('[data-bk]');if(!n||!k||!window.IntersectionObserver)return;
+new IntersectionObserver(function(e){n.classList.toggle('no-logo',e[0].isIntersecting)}).observe(k);})();
 </script>
 </body>
 </html>
