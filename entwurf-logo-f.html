@@ -225,6 +225,10 @@ img.bk{display:block;width:100%;height:auto;max-width:none}
 .navwrap-d.is-fixed .hs-nav{position:fixed;top:0;left:0;right:0;z-index:20;background:#ECECEC;box-shadow:0 1px 0 rgba(18,18,18,.1),0 8px 20px -6px rgba(18,18,18,.28);animation:f-in .5s cubic-bezier(.2,.8,.2,1)}
 .navwrap-d.is-fixed .hs-brand{display:inline-flex}
 @keyframes f-in{from{transform:translateY(-100%)}to{transform:none}}
+/* roter Balken wie im Briefkopf: läuft von den Menüpunkten bis zur Wortmarke */
+.navwrap-d.is-fixed .hs-brand{flex:1 1 auto;min-width:0;margin-left:0}
+.hs-nav-d .hs-logo{display:flex;align-items:flex-end;width:100%}
+.hs-nav-d .hs-bar{flex:1 1 auto;min-width:24px;height:calc(var(--lh) * .4307);margin:0 calc(var(--lh) * .29) calc(var(--lh) * .006) 0;background:#C51415}
 @media (prefers-reduced-motion: reduce){.navwrap-d.is-fixed .hs-nav{animation:none}}
 
 </style>
@@ -248,7 +252,7 @@ img.bk{display:block;width:100%;height:auto;max-width:none}
         <a href="ueber-uns.html">Über uns</a>
         <a href="#kontakt">Kontakt</a>
       </div>
-      <a href="#top" class="hs-brand is-hidden" aria-label="Auktionshaus Hohenstaufen – zum Seitenanfang"><span class="hs-logo"><img src="bilder/logo-farbe.svg" alt="Auktionshaus Hohenstaufen" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
+      <a href="#top" class="hs-brand is-hidden" aria-label="Auktionshaus Hohenstaufen – zum Seitenanfang"><span class="hs-logo"><span class="hs-bar" aria-hidden="true"></span><img src="bilder/logo-farbe.svg" alt="Auktionshaus Hohenstaufen" width="137" height="30"><span class="hs-sq" aria-hidden="true"></span></span></a>
     </nav>
   </div>
 
